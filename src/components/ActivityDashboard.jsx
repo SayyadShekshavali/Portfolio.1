@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { HeatmapGrid } from "./arts/HeatmapGrid.jsx";
-import { GithubHeatmap } from "./GithubHeatMap.jsx";
+import { GithubHeatmap } from "./GithubHeatmap.jsx";
 
 export default function ActivityDashboard() {
   const [activeTab, setActiveTab] = useState("leetcode");
