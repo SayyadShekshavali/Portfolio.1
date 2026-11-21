@@ -1,0 +1,113 @@
+import React, { useEffect, useState } from "react";
+import AsciiArtSequence from "./AsciiArtSequence.jsx";
+import image from "../assets/profile-sketch.gif";
+import RoleRotator from "./RoleRotator.jsx";
+import { FaGlobeAsia, FaMapMarkerAlt } from "react-icons/fa";
+import About from "./About.jsx";
+import POW from "./POW.jsx";
+
+const Mainpage = () => {
+  const [currentTime, setCurrentTime] = useState("");
+
+  useEffect(() => {
+    const updateTime = () => {
+      const time = new Intl.DateTimeFormat("en-IN", {
+        timeZone: "Asia/Kolkata",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
+      }).format(new Date());
+
+      setCurrentTime(time);
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="min-h-screen w-full bg-white flex flex-col overflow-x-hidden">
+      {/* Hero section */}
+      <div className="relative w-full max-w-[1400px] mx-auto">
+        {/* Artwork */}
+        <div className="relative z-10 w-full  sm:h-[380px] md:h-[480px] lg:h-[630px] bg-neutral-950 overflow-hidden">
+          <AsciiArtSequence />
+        </div>
+
+        {/* Profile section */}
+        <div className="relative z-20 flex flex-col sm:flex-row items-start gap-3 sm:gap-5 px-4 sm:px-6 lg:px-8 -mt-8 sm:mt-0">
+          {/* Profile image */}
+          <div className="mt-2 sm:mt-5 shrink-0">
+            <img
+              src={image}
+              alt="Profile sketch"
+              className="w-20 h-20 sm:w-28 sm:h-28 lg:w-36 lg:h-36 object-cover rounded-2xl border shadow-xl"
+            />
+          </div>
+
+          {/* Name and details */}
+          <div className="w-full min-w-0 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-1 sm:pt-8 lg:pt-12">
+            {/* Name and role */}
+            <div className="min-w-0 flex flex-col gap-2">
+              <span className="font-['Sigmar_One'] text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight break-words">
+                Sayyad Shekshavali
+              </span>
+
+              <RoleRotator />
+            </div>
+
+            {/* Time and location */}
+            <div className="flex flex-col gap-2 sm:gap-3 sm:ml-auto sm:mt-2 text-neutral-600 shrink-0">
+              <div className="flex items-center gap-2">
+                <FaGlobeAsia
+                  size={22}
+                  className="text-neutral-700 sm:w-[26px] sm:h-[26px] shrink-0"
+                />
+
+                <span className="text-sm sm:text-base font-semibold tracking-wide tabular-nums">
+                  {currentTime}
+                </span>
+
+                <span className="text-xs sm:text-sm text-neutral-400">IST</span>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <FaMapMarkerAlt
+                  size={16}
+                  className="text-neutral-500 shrink-0"
+                />
+
+                <span className="text-xs sm:text-sm font-medium">
+                  Hyderabad, India
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Introduction */}
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8">
+        <h2 className="text-lg sm:text-2xl lg:text-3xl leading-relaxed text-neutral-600 text-left">
+          Driven by creativity, perseverance, curiosity, and a passion for
+          continuous growth.
+        </h2>
+      </div>
+
+      {/* About section */}
+      <div className="w-full min-w-0 mt-8 sm:mt-12">
+        <About />
+      </div>
+
+      {/* Proof of Work */}
+      <div className="w-full min-w-0 mt-8 sm:mt-12">
+        <POW />
+      </div>
+    </section>
+  );
+};
+
+export default Mainpage;
