@@ -29,7 +29,7 @@ const Mainpage = () => {
   }, []);
 
   return (
-    <section className="min-h-screen w-full bg-white flex flex-col overflow-x-hidden border-4 border-red-900">
+    <section className="min-h-screen max-w-[800px] bg-white flex flex-col overflow-x-hidden border-4 border-red-900">
       {/* Hero section */}
       <div className="relative w-full max-w-[800px] mx-auto border-4 border-blue-800">
         {/* Artwork */}
