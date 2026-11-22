@@ -40,7 +40,7 @@ const Mainpage = () => {
         {/* Profile section */}
         <div className="relative z-20 flex flex-row items-start gap-3 sm:gap-5 px-4 sm:px-6 lg:px-8">
           {/* Profile image */}
-          <div className="-mt-8 shrink-0">
+          <div className="lg:-mt-8 sm:-mt-4shrink-0">
             <img
               src={image}
               alt="Profile sketch"
