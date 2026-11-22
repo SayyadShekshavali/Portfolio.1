@@ -38,7 +38,7 @@ const Mainpage = () => {
         </div>
 
         {/* Profile section */}
-        <div className="relative z-20 flex flex-row items-start gap-3 sm:gap-5 px-4 sm:px-6 lg:px-8">
+        <div className="relative z-20 flex flex-row items-start gap-3 sm:gap-5 px-4 sm:px-6 lg:px-8 lg:ml-4">
           {/* Profile image */}
           <div className="-mt-5  shrink-0">
             <img
@@ -49,7 +49,7 @@ const Mainpage = () => {
           </div>
 
           {/* Name and details */}
-          <div className="lg:ml-8 w-full min-w-0 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-4 lg:pt-6 text-left">
+          <div className=" w-full min-w-0 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-4 lg:pt-6 text-left">
             {/* Name and role */}
             <div className="min-w-0 flex flex-col ">
               <span className="font-['Sigmar_One'] text-lg sm:text-xl md:text-2xl lg:text-2xl tracking-tight leading-tight break-words">
