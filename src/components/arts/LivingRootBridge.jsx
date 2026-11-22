@@ -14,12 +14,13 @@ export function LivingRootBridge() {
   return (
     <pre
       ref={ref}
-      className="w-full max-w-full overflow-hidden"
+      className="block w-fit max-w-full overflow-hidden bg-black text-white"
       style={{
-        fontSize: "clamp(3px, 0.65vw, 10px)",
+        fontSize: "clamp(3px, 0.71vw, 10px)",
         lineHeight: 1,
         fontFamily: "Menlo, Consolas, monospace",
         margin: 0,
+        padding: 0,
       }}
     />
   );

@@ -33,26 +33,26 @@ const Mainpage = () => {
       {/* Hero section */}
       <div className="relative w-full max-w-[1400px] mx-auto">
         {/* Artwork */}
-        <div className="relative z-10 w-full  sm:h-[380px] md:h-[480px] lg:h-[630px] bg-neutral-950 overflow-hidden">
+        <div className="relative z-10 w-full flex justify-center items-center overflow-hidden">
           <AsciiArtSequence />
         </div>
 
         {/* Profile section */}
-        <div className="relative z-20 flex flex-col sm:flex-row items-start gap-3 sm:gap-5 px-4 sm:px-6 lg:px-8 -mt-8 sm:mt-0">
+        <div className="relative z-20 flex flex-row  items-start gap-3 sm:gap-5 px-4 sm:px-6 lg:px-8  sm:mt-0 border-4 border-red-800 ">
           {/* Profile image */}
-          <div className="mt-2 sm:mt-5 shrink-0">
+          <div className=" -mt-8 ">
             <img
               src={image}
               alt="Profile sketch"
-              className="w-20 h-20 sm:w-28 sm:h-28 lg:w-36 lg:h-36 object-cover rounded-2xl border shadow-xl"
+              className="h-20 w-30 sm:w-15 sm:h-15 lg:w-43 lg:h-36 md:h-30 md:w-35 object-cover rounded-2xl border shadow-xl"
             />
           </div>
 
           {/* Name and details */}
-          <div className="w-full min-w-0 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-1 sm:pt-8 lg:pt-12">
+          <div className="w-full min-w-0 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-1 sm:pt-20 lg:pt-7 border-4 border-red-800 text-left">
             {/* Name and role */}
             <div className="min-w-0 flex flex-col gap-2">
-              <span className="font-['Sigmar_One'] text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight break-words">
+              <span className="font-['Sigmar_One'] md:text-2xl sm:text-xl lg:text-4xl tracking-tight leading-tight break-words">
                 Sayyad Shekshavali
               </span>
 

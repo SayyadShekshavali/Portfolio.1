@@ -16,13 +16,20 @@ export default function AsciiArtSequence() {
     return () => clearInterval(interval);
   }, []);
 
-  const ActiveArtwork = artworks[activeIndex];
-
   return (
-    <div className="relative w-full overflow-hidden">
-      <div key={activeIndex} className="ascii-art-transition">
-        <ActiveArtwork />
-      </div>
+    <div className="w-full flex justify-center items-center overflow-hidden">
+      {artworks.map((Artwork, index) => (
+        <div
+          key={index}
+          className={`w-full flex justify-center items-center ${
+            activeIndex === index ? "block" : "hidden"
+          }`}
+        >
+          <div className="w-fit max-w-full bg-black">
+            <Artwork />
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
