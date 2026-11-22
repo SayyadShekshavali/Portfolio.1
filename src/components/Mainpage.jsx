@@ -29,33 +29,30 @@ const Mainpage = () => {
   }, []);
 
   return (
-    <section
-      className="
-     min-h-screen max-w-[800px] bg-white flex flex-col overflow-x-hidden border-4 border-red-900"
-    >
+    <section className="min-h-screen w-full max-w-[800px] mx-auto bg-white flex flex-col overflow-x-hidden">
       {/* Hero section */}
-      <div className="relative w-full max-w-[800px] mx-auto border-4 border-blue-800">
+      <div className="relative w-full mx-auto">
         {/* Artwork */}
         <div className="relative z-10 w-full flex justify-center items-center overflow-hidden">
           <AsciiArtSequence />
         </div>
 
         {/* Profile section */}
-        <div className="relative z-20 flex flex-row  items-start gap-3 sm:gap-5 px-4 sm:px-6 lg:px-8  sm:mt-0 border-4 border-red-800 ">
+        <div className="relative z-20 flex flex-row items-start gap-3 sm:gap-5 px-4 sm:px-6 lg:px-8">
           {/* Profile image */}
-          <div className=" -mt-8 ">
+          <div className="-mt-8 shrink-0">
             <img
               src={image}
               alt="Profile sketch"
-              className="h-20 w-30 sm:w-15 sm:h-15 lg:w-43 lg:h-36 md:h-30 md:w-35 object-cover rounded-2xl border shadow-xl"
+              className="w-20 h-20 sm:w-28 sm:h-28 lg:w-36 lg:h-36 object-cover rounded-2xl border shadow-xl"
             />
           </div>
 
           {/* Name and details */}
-          <div className="w-full min-w-0 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-1 sm:pt-20 lg:pt-7 border-4 border-red-800 text-left">
+          <div className="w-full min-w-0 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-1 sm:pt-20 lg:pt-7 text-left">
             {/* Name and role */}
             <div className="min-w-0 flex flex-col gap-2">
-              <span className="font-['Sigmar_One'] md:text-2xl sm:text-xl lg:text-4xl tracking-tight leading-tight break-words">
+              <span className="font-['Sigmar_One'] text-xl sm:text-2xl lg:text-4xl tracking-tight leading-tight break-words">
                 Sayyad Shekshavali
               </span>
 
@@ -93,7 +90,7 @@ const Mainpage = () => {
       </div>
 
       {/* Introduction */}
-      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8">
         <h2 className="text-lg sm:text-2xl lg:text-3xl leading-relaxed text-neutral-600 text-left">
           Driven by creativity, perseverance, curiosity, and a passion for
           continuous growth.
@@ -101,12 +98,12 @@ const Mainpage = () => {
       </div>
 
       {/* About section */}
-      <div className="w-full min-w-0 mt-8 sm:mt-12">
+      <div className="w-full min-w-0 mx-auto mt-8 sm:mt-12">
         <About />
       </div>
 
       {/* Proof of Work */}
-      <div className="w-full min-w-0 mt-8 sm:mt-12">
+      <div className="w-full min-w-0 mx-auto mt-8 sm:mt-12">
         <POW />
       </div>
     </section>
