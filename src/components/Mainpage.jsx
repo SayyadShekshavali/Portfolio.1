@@ -31,7 +31,7 @@ const Mainpage = () => {
   return (
     <section className="min-h-screen w-full bg-white flex flex-col overflow-x-hidden border-4 border-red-900">
       {/* Hero section */}
-      <div className="relative w-full max-w-[1200px] mx-auto border-4 border-blue-800">
+      <div className="relative w-full max-w-[800px] mx-auto border-4 border-blue-800">
         {/* Artwork */}
         <div className="relative z-10 w-full flex justify-center items-center overflow-hidden">
           <AsciiArtSequence />
