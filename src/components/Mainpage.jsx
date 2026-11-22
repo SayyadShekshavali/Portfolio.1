@@ -59,14 +59,14 @@ const Mainpage = () => {
             </div>
 
             {/* Time and location */}
-            <div className="flex flex-col gap-2 sm:gap-3 sm:ml-auto sm:mt-2 lg:mt-0 text-neutral-600 shrink-0 text-sm border-4 border-red-800 ">
+            <div className="flex flex-col gap-2 sm:gap-3 -ml-3 sm:mt-2 lg:mt-0 text-neutral-600 shrink-0 text-sm border-4 border-red-800 ">
               <div className="flex items-center gap-2">
                 <FaGlobeAsia
                   size={22}
                   className="text-neutral-700 sm:w-[20px] sm:h-[20px] shrink-0"
                 />
 
-                <span className="text-sm  font-semibold tracking-wide tabular-nums">
+                <span className="text-xs  font-semibold tracking-wide tabular-nums">
                   {currentTime}
                 </span>
 
