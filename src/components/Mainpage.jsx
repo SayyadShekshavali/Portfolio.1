@@ -59,7 +59,7 @@ const Mainpage = () => {
             </div>
 
             {/* Time and location */}
-            <div className="flex flex-col gap-2 sm:gap-3 sm:ml-auto sm:mt-2 text-neutral-600 shrink-0 text-sm sm:text-xs md:text-xs lg:text-sm ">
+            <div className="flex flex-col gap-2 sm:gap-3 sm:ml-auto sm:mt-2 text-neutral-600 shrink-0 text-sm ">
               <div className="flex items-center gap-2">
                 <FaGlobeAsia
                   size={22}
@@ -79,9 +79,7 @@ const Mainpage = () => {
                   className="text-neutral-500 shrink-0"
                 />
 
-                <span className="text-xs sm:text-sm font-medium">
-                  Hyderabad, India
-                </span>
+                <span className="text-xs  font-medium">Hyderabad, India</span>
               </div>
             </div>
           </div>
