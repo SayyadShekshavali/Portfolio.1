@@ -23,7 +23,7 @@ const RoleRotator = () => {
       <span className="lg:text-xs sm:text-base text-neutral-500">I'm a</span>
       <span
         key={activeRole}
-        className="role-enter sm:text-xs md:text-sm lg:text-base  font-semibold text-gray-700"
+        className="role-enter !sm:text-xs !md:text-sm !lg:text-base  font-semibold text-gray-700"
       >
         {roles[activeRole]}
       </span>
