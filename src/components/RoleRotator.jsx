@@ -20,10 +20,10 @@ const RoleRotator = () => {
 
   return (
     <div className="flex flex-wrap items-center gap-2 text-left lg:-mt-0">
-      <span className="text-base sm:text-base text-neutral-500">I'm a</span>
+      <span className="lg:text-xs sm:text-base text-neutral-500">I'm a</span>
       <span
         key={activeRole}
-        className="role-enter text-base  font-semibold text-gray-700"
+        className="role-enter sm:text-xs md:text-sm lg:text-base  font-semibold text-gray-700"
       >
         {roles[activeRole]}
       </span>
