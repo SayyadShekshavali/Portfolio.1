@@ -52,7 +52,7 @@ const Mainpage = () => {
           <div className="w-full min-w-0 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-1 sm:pt-20 lg:pt-3 text-left">
             {/* Name and role */}
             <div className="min-w-0 flex flex-col gap-2">
-              <span className="font-['Sigmar_One'] md:text-base sm:text-sm lg:text-xl tracking-tight leading-tight break-words">
+              <span className="font-['Sigmar_One'] md:text-l sm:text-base lg:text-xl tracking-tight leading-tight break-words">
                 Sayyad Shekshavali
               </span>
               <RoleRotator />
