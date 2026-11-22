@@ -51,7 +51,7 @@ const Mainpage = () => {
           {/* Name and details */}
           <div className="w-full min-w-0 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-1 sm:pt-20 lg:pt-3 text-left">
             {/* Name and role */}
-            <div className="min-w-0 flex flex-col gap-1">
+            <div className="min-w-0 flex flex-col ">
               <span className="font-['Sigmar_One'] text-lg sm:text-xl md:text-2xl lg:text-2xl tracking-tight leading-tight break-words">
                 Sayyad Shekshavali
               </span>
@@ -59,7 +59,7 @@ const Mainpage = () => {
             </div>
 
             {/* Time and location */}
-            <div className="flex flex-col gap-2 sm:gap-3 sm:ml-auto sm:mt-2 text-neutral-600 shrink-0 md:text-sm sm:text-sm lg:text-l">
+            <div className="flex flex-col gap-2 sm:gap-3 sm:ml-auto sm:mt-2 text-neutral-600 shrink-0 text-sm sm:text-xs md:text-sm lg:text-base ">
               <div className="flex items-center gap-2">
                 <FaGlobeAsia
                   size={22}
