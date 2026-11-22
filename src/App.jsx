@@ -12,8 +12,8 @@ const App = () => {
       {!isLoading && (
         <DotGridBackground
           dotColor="#000000"
-          dotSize={3}
-          dotSpacing={28}
+          dotSize={1}
+          dotSpacing={20}
           orbitSpeed={1.5}
           impactRadius={120}
           scaleOnHover={1.8}
