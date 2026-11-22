@@ -63,7 +63,7 @@ const Mainpage = () => {
               <div className="flex items-center gap-2">
                 <FaGlobeAsia
                   size={22}
-                  className="text-neutral-700 sm:w-[26px] sm:h-[26px] shrink-0"
+                  className="text-neutral-700 sm:w-[20px] sm:h-[20px] shrink-0"
                 />
 
                 <span className="text-sm sm:text-base font-semibold tracking-wide tabular-nums">
