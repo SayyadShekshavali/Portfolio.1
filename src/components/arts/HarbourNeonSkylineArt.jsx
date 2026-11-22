@@ -15,7 +15,7 @@ export function HarbourNeonSkylineArt() {
       ref={ref}
       className="block w-fit max-w-full overflow-hidden"
       style={{
-        fontSize: "clamp(3px,0.7vw, 5px)",
+        fontSize: "clamp(3px,0.7vw, 6px)",
         lineHeight: 1,
         fontFamily: "Menlo, Consolas, monospace",
         transform: "scaleX(1)",

@@ -66,7 +66,7 @@ const Mainpage = () => {
                   className="text-neutral-700 sm:w-[20px] sm:h-[20px] shrink-0"
                 />
 
-                <span className="text-sm sm:text-base font-semibold tracking-wide tabular-nums">
+                <span className="text-sm  font-semibold tracking-wide tabular-nums">
                   {currentTime}
                 </span>
 
