@@ -40,7 +40,7 @@ const Mainpage = () => {
         {/* Profile section */}
         <div className="relative z-20 flex flex-row items-start gap-3 sm:gap-5 px-4 sm:px-6 lg:px-8">
           {/* Profile image */}
-          <div className="-mt-6  shrink-0">
+          <div className="-mt-5  shrink-0">
             <img
               src={image}
               alt="Profile sketch"
@@ -49,7 +49,7 @@ const Mainpage = () => {
           </div>
 
           {/* Name and details */}
-          <div className="w-full min-w-0 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-5 lg:pt-3 text-left">
+          <div className="w-full min-w-0 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-4 lg:pt-3 text-left">
             {/* Name and role */}
             <div className="min-w-0 flex flex-col ">
               <span className="font-['Sigmar_One'] text-lg sm:text-xl md:text-2xl lg:text-2xl tracking-tight leading-tight break-words">
@@ -59,7 +59,7 @@ const Mainpage = () => {
             </div>
 
             {/* Time and location */}
-            <div className="flex flex-col gap-2 sm:gap-3 sm:ml-auto sm:mt-2 text-neutral-600 shrink-0 text-sm ">
+            <div className="flex flex-col gap-2 sm:gap-3 sm:ml-auto sm:mt-2 lg:mt-0 text-neutral-600 shrink-0 text-sm ">
               <div className="flex items-center gap-2">
                 <FaGlobeAsia
                   size={22}
