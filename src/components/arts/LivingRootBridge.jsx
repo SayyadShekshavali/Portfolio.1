@@ -16,7 +16,7 @@ export function LivingRootBridge() {
       ref={ref}
       className="block w-fit max-w-full overflow-hidden bg-black text-white"
       style={{
-        fontSize: "clamp(3px, 0.71vw, 10px)",
+        fontSize: "clamp(3px, 0.7vw, 10px)",
         lineHeight: 1,
         fontFamily: "Menlo, Consolas, monospace",
         margin: 0,
