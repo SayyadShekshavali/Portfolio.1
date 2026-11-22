@@ -44,7 +44,7 @@ const Mainpage = () => {
             <img
               src={image}
               alt="Profile sketch"
-              className="w-20 h-20 sm:w-28 sm:h-28 lg:w-36 lg:h-36 object-cover rounded-2xl border shadow-xl"
+              className="w-20 h-20 sm:w-28 sm:h-28 lg:w-30 lg:h-30 object-cover rounded-2xl border shadow-xl"
             />
           </div>
 
@@ -52,7 +52,7 @@ const Mainpage = () => {
           <div className="w-full min-w-0 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-1 sm:pt-20 lg:pt-7 text-left">
             {/* Name and role */}
             <div className="min-w-0 flex flex-col gap-2">
-              <span className="font-['Sigmar_One'] text-xl sm:text-2xl lg:text-4xl tracking-tight leading-tight break-words">
+              <span className="font-['Sigmar_One'] md:text-2xl sm:text-xl lg:text-xl tracking-tight leading-tight break-words">
                 Sayyad Shekshavali
               </span>
 
