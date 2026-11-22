@@ -44,7 +44,7 @@ const Mainpage = () => {
             <img
               src={image}
               alt="Profile sketch"
-              className="w-20 h-20 sm:w-28 sm:h-28 lg:w-30 lg:h-30 object-cover rounded-2xl border shadow-xl"
+              className="w-20 h-20 sm:w-28 sm:h-28 lg:w-26 lg:h-26 object-cover rounded-2xl border shadow-xl"
             />
           </div>
 
