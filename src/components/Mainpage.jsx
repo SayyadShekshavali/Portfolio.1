@@ -40,7 +40,7 @@ const Mainpage = () => {
         {/* Profile section */}
         <div className="relative z-20 flex flex-row items-start gap-3 sm:gap-5 px-4 sm:px-6 lg:px-4 lg:ml-8 ">
           {/* Profile image */}
-          <div className="-mt-5  shrink-0">
+          <div className="-mt-4  shrink-0">
             <img
               src={image}
               alt="Profile sketch"
@@ -59,7 +59,7 @@ const Mainpage = () => {
             </div>
 
             {/* Time and location */}
-            <div className="flex flex-col gap-2 sm:gap-3 sm:ml-auto sm:mt-2 lg:mt-0 text-neutral-600 shrink-0 text-sm ">
+            <div className="flex flex-col gap-2 sm:gap-3 sm:ml-auto sm:mt-2 lg:mt-0 text-neutral-600 shrink-0 text-sm border-4 border-red-800 ">
               <div className="flex items-center gap-2">
                 <FaGlobeAsia
                   size={22}
