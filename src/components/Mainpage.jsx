@@ -38,7 +38,7 @@ const Mainpage = () => {
         </div>
 
         {/* Profile section */}
-        <div className="relative z-20 flex flex-row items-start gap-3 sm:gap-5 md:px-4 sm:pr-6 lg:px-4 lg:ml-8 md:ml-13 ml-2  ">
+        <div className="relative z-20 flex flex-row items-start gap-3 sm:gap-5 md:px-4 sm:pr-6 lg:px-4 lg:ml-8 md:ml-13 mx-2  ">
           {/* Profile image */}
           <div className="-mt-4  shrink-0">
             <img
