@@ -102,7 +102,7 @@ const Mainpage = () => {
       </div>
 
       {/* Proof of Work */}
-      <div className="w-full min-w-0 mx-auto mt-8 sm:mt-12">
+      <div className="w-full min-w-0 mx-auto ">
         <POW />
       </div>
     </section>
