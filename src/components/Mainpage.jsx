@@ -49,7 +49,7 @@ const Mainpage = () => {
           </div>
 
           {/* Name and details */}
-          <div className=" w-full min-w-0 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 pt-4 lg:pt-6 text-left">
+          <div className=" w-full min-w-0 flex flex-col sm:flex-col sm:items-center gap-4 sm:gap-6 pt-4 lg:pt-6 text-left">
             {/* Name and role */}
             <div className="min-w-0 flex flex-col ">
               <span className="font-['Sigmar_One'] text-lg sm:text-xl md:text-2xl lg:text-2xl tracking-tight leading-tight break-words">
