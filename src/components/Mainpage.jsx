@@ -65,10 +65,10 @@ const Mainpage = () => {
                   size={18}
                   className="text-neutral-700 sm:w-[20px] sm:h-[20px] shrink-0"
                 />
-                <span className=" lg:text-xs md:xs sm:text-[4px]  font-semibold tracking-wide tabular-nums">
+                <span className=" lg:text-xs md:xs !sm:text-[4px]  font-semibold tracking-wide tabular-nums">
                   {currentTime}
                 </span>
-                <span className="lg:text-[10px] sm:text-[3px] text-neutral-400">
+                <span className="lg:text-[10px] !sm:text-[3px] text-neutral-400">
                   IST
                 </span>
               </div>
@@ -79,7 +79,7 @@ const Mainpage = () => {
                   className="text-neutral-500 shrink-0"
                 />
 
-                <span className=" lg:text-xs md:text-xs sm:text-[4px]  font-medium">
+                <span className=" lg:text-xs md:text-xs !sm:text-[4px]  font-medium">
                   Hyderabad, India
                 </span>
               </div>
