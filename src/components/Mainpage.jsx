@@ -89,8 +89,8 @@ const Mainpage = () => {
       </div>
 
       {/* Introduction */}
-      <div className="w-full mx-auto px-4 sm:px-0 lg:px-8 md:px-4 md:ml-5 mt-3">
-        <p className=" sm:text-base md:text-xl lg:text-xl leading-relaxed text-neutral-600 text-left">
+      <div className="w-full mx-auto px-4 sm:px-0 lg:px-8 md:px-4 md:ml-5  md:mr-3 mt-3">
+        <p className=" sm:text-sm md:text-base lg:text-lg leading-relaxed text-neutral-600 text-left">
           Driven by creativity, perseverance, curiosity, and a passion for
           continuous growth.
         </p>
