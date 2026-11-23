@@ -59,7 +59,7 @@ const Mainpage = () => {
             </div>
 
             {/* Time and location */}
-            <div className="flex flex-col gap-2 sm:gap-3 ml-auto sm:mt-2 lg:mt-0 text-neutral-600 shrink-0 text-sm  lg:mr-8 ">
+            <div className="flex flex-col gap-2 sm:gap-3 ml-auto sm:mt-2 lg:mt-0 text-neutral-600 shrink-0 text-sm  lg:mr-8 md:mr-8">
               <div className="flex items-center gap-2">
                 <FaGlobeAsia
                   size={18}
