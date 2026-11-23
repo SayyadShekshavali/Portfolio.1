@@ -3,9 +3,9 @@ import { Highlighter } from "@/components/ui/highlighter";
 import { LineShadowText } from "./ui/line-shadow-text";
 function About() {
   return (
-    <section className="about-section p-2 gap-2" id="about">
+    <section className="about-section p-2 gap-0" id="about">
       <div className="about-container">
-        <div className="about-content text-left gap-4 flex flex-col">
+        <div className="about-content text-left gap-0 flex flex-col">
           <h1 className="about-tag">
             Personal <LineShadowText>Snapshot</LineShadowText>
           </h1>
