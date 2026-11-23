@@ -66,11 +66,13 @@ const Mainpage = () => {
                   className="text-neutral-700 sm:w-[20px] sm:h-[20px] shrink-0"
                 />
 
-                <span className="text-xs  font-semibold tracking-wide tabular-nums">
+                <span className="text-[5px]  font-semibold tracking-wide tabular-nums">
                   {currentTime}
                 </span>
 
-                <span className="text-xs sm:text-sm text-neutral-400">IST</span>
+                <span className="text-[3px] sm:text-xs text-neutral-400">
+                  IST
+                </span>
               </div>
 
               <div className="flex items-center gap-2">
@@ -79,7 +81,9 @@ const Mainpage = () => {
                   className="text-neutral-500 shrink-0"
                 />
 
-                <span className="text-xs  font-medium">Hyderabad, India</span>
+                <span className="text-[5px]  font-medium">
+                  Hyderabad, India
+                </span>
               </div>
             </div>
           </div>
