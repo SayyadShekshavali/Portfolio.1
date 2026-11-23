@@ -65,13 +65,12 @@ const Mainpage = () => {
                   size={18}
                   className="text-neutral-700 sm:w-[20px] sm:h-[20px] shrink-0"
                 />
-                <span className=" text-xs sm:text-[6px]  font-semibold tracking-wide tabular-nums">
+                <span className=" text-[6px] sm:text-xs  font-semibold tracking-wide tabular-nums">
                   {currentTime}
                 </span>
-                <span className="text-xs sm:text-[4px] text-neutral-400">
+                <span className="text-[4px] sm:text-[6px] text-neutral-400">
                   IST
                 </span>
-                w
               </div>
 
               <div className="flex items-center gap-2">
@@ -80,7 +79,7 @@ const Mainpage = () => {
                   className="text-neutral-500 shrink-0"
                 />
 
-                <span className=" text-xs sm:text-[6px]  font-medium">
+                <span className=" text-[6px] sm:text-xs  font-medium">
                   Hyderabad, India
                 </span>
               </div>
