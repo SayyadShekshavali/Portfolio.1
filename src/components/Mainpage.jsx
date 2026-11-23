@@ -38,7 +38,7 @@ const Mainpage = () => {
         </div>
 
         {/* Profile section */}
-        <div className="relative z-20 flex flex-row items-start gap-3 sm:gap-5 md:px-4 sm:pr-6 lg:px-4 lg:ml-8 md:ml-13 ml-0  ">
+        <div className="relative z-20 flex flex-row items-start gap-3 sm:gap-5 md:px-4 sm:pr-6 lg:px-4 lg:ml-8 md:ml-13 ml-2  ">
           {/* Profile image */}
           <div className="-mt-4  shrink-0">
             <img
@@ -90,7 +90,7 @@ const Mainpage = () => {
 
       {/* Introduction */}
       <div className="w-full mx-auto px-4 sm:px-0 lg:px-8 md:px-4 md:ml-5  md:mr-3 mt-3">
-        <p className=" sm:text-sm md:text-base lg:text-lg leading-relaxed text-neutral-600 text-left">
+        <p className=" sm:text-sm md:text-lg lg:text-lg leading-relaxed text-neutral-600 text-left">
           Driven by creativity, perseverance, curiosity, and a passion for
           continuous growth.
         </p>
