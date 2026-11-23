@@ -38,7 +38,7 @@ const Mainpage = () => {
         </div>
 
         {/* Profile section */}
-        <div className="relative z-20 flex flex-row items-start gap-3 sm:gap-5 px-4 sm:px-6 lg:px-4 lg:ml-8 md:ml-10">
+        <div className="relative z-20 flex flex-row items-start gap-3 sm:gap-5 px-4 sm:px-6 lg:px-4 lg:ml-8 md:ml-13">
           {/* Profile image */}
           <div className="-mt-4  shrink-0">
             <img
@@ -97,7 +97,7 @@ const Mainpage = () => {
       </div>
 
       {/* About section */}
-      <div className="w-full min-w-0 mx-auto mt-8 sm:mt-12">
+      <div className="w-full min-w-0 mx-auto mt-0 ">
         <About />
       </div>
 

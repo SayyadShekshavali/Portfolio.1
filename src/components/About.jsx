@@ -22,7 +22,7 @@ function About() {
             </span>
           </h2>
 
-          <p className="text-2xl pt-4 leading-9 ">
+          <p className="text-xl lg:text-2xl  pt-4 leading-9 ">
             I am a passionate Software Engineer with hands-on experience in
             <Highlighter action="highlight" color="#64748B">
               full-stack development
@@ -40,7 +40,7 @@ function About() {
             , and delivering business-impacting solutions.
           </p>
 
-          <p className="text-2xl pt-4 leading-9">
+          <p className="text-xl lg:text-2xl pt-4 leading-9">
             Along with building projects involving{" "}
             <Highlighter action="highlight" color="#E2E8F0">
               AI integration
