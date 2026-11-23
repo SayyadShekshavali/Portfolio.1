@@ -89,12 +89,12 @@ const Mainpage = () => {
       </div>
 
       {/* Introduction */}
-      <div className="w-full mx-auto px-4 sm:px-0 lg:px-8 mt-6 sm:mt-8">
+      {/* <div className="w-full mx-auto px-4 sm:px-0 lg:px-8 mt-6 sm:mt-8">
         <h2 className="text-lg sm:text-l lg:text-3xl leading-relaxed text-neutral-600 text-left">
           Driven by creativity, perseverance, curiosity, and a passion for
           continuous growth.
         </h2>
-      </div>
+      </div> */}
 
       {/* About section */}
       <div className="w-full min-w-0 mx-auto mt-8 sm:mt-12">
