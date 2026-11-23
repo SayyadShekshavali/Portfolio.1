@@ -3,9 +3,9 @@ import { Highlighter } from "@/components/ui/highlighter";
 import { LineShadowText } from "./ui/line-shadow-text";
 function About() {
   return (
-    <section className="about-section p-2 gap-0" id="about">
+    <section className="about-section p-2 gap-1" id="about">
       <div className="about-container">
-        <div className="about-content text-left gap-0 flex flex-col">
+        <div className="about-content text-left gap-1 flex flex-col">
           <h1 className="about-tag">
             Personal <LineShadowText>Snapshot</LineShadowText>
           </h1>
@@ -22,7 +22,7 @@ function About() {
             </span>
           </h2>
 
-          <p className="text-xl lg:text-2xl  pt-0  ">
+          <p className="text-xl lg:text-xl  pt-0  ">
             I am a passionate Software Engineer with hands-on experience in
             <Highlighter action="highlight" color="#64748B">
               full-stack development
@@ -40,7 +40,7 @@ function About() {
             , and delivering business-impacting solutions.
           </p>
 
-          <p className="text-xl lg:text-2xl pt-0 ">
+          <p className="text-xl lg:text-xl pt-2 ">
             Along with building projects involving{" "}
             <Highlighter action="highlight" color="#E2E8F0">
               AI integration
