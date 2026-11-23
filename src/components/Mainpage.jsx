@@ -65,14 +65,13 @@ const Mainpage = () => {
                   size={18}
                   className="text-neutral-700 sm:w-[20px] sm:h-[20px] shrink-0"
                 />
-
-                <span className="text-[5px]  font-semibold tracking-wide tabular-nums">
+                <span className=" text-xs sm:text-[7px]  font-semibold tracking-wide tabular-nums">
                   {currentTime}
                 </span>
-
-                <span className="text-[3px] sm:text-xs text-neutral-400">
+                <span className="text-xs sm:text-[7px] text-neutral-400">
                   IST
                 </span>
+                w
               </div>
 
               <div className="flex items-center gap-2">
