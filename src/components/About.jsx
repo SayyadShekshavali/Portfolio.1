@@ -6,11 +6,11 @@ function About() {
     <section className="about-section p-2 gap-1" id="about">
       <div className="about-container">
         <div className="about-content text-left gap-1 flex flex-col">
-          <h1 className="about-tag">
+          <p className="about-tag sm:text-lg md:text-xl lg:text-xl font-semibold viga-font">
             Personal <LineShadowText>Snapshot</LineShadowText>
-          </h1>
+          </p>
 
-          <h2 className="-mt-3">
+          <p className="-mt-3 font-semibold sm:text-sm md:text-sm lg:text-base">
             Passionate Software Engineer
             <span>
               {" "}
@@ -20,9 +20,9 @@ function About() {
               </Highlighter>
               .
             </span>
-          </h2>
+          </p>
 
-          <p className="text-xl lg:text-xl  pt-0  ">
+          <p className="sm:text-sm md:text-lg lg:text-lg  pt-0  ">
             I am a passionate Software Engineer with hands-on experience in
             <Highlighter action="highlight" color="#64748B">
               full-stack development
@@ -40,7 +40,7 @@ function About() {
             , and delivering business-impacting solutions.
           </p>
 
-          <p className="text-xl lg:text-xl pt-2 ">
+          <p className="sm:text-sm md:text-lg lg:text-lg pt-2 ">
             Along with building projects involving{" "}
             <Highlighter action="highlight" color="#E2E8F0">
               AI integration
