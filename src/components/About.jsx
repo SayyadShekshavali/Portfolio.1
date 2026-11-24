@@ -6,8 +6,12 @@ function About() {
     <section className="about-section p-2 gap-1" id="about">
       <div className="about-container">
         <div className="about-content text-left gap-1 flex flex-col">
-          <p className="about-tag sm:text-lg md:text-xl lg:text-xl font-semibold viga-font">
-            Personal <LineShadowText>Snapshot</LineShadowText>
+          <p className="about-tag sm:text-lg md:text-xl lg:text-xl font-semibold viga-font p-4">
+            <Highlighter action="underline" color="#36454F">
+              {" "}
+              Personal
+            </Highlighter>{" "}
+            <LineShadowText>Snapshot</LineShadowText>
           </p>
 
           <p className="-mt-3 font-semibold sm:text-sm md:text-sm lg:text-base">
