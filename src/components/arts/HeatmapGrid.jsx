@@ -12,7 +12,9 @@ export function HeatmapGrid() {
   useEffect(() => {
     async function fetchStats() {
       try {
-        const response = await fetch("http://localhost:5000/api/leetcode");
+        const response = await fetch(
+          "https://portfolio-1-kappa-azure.vercel.app/api/leetcode",
+        );
 
         if (!response.ok) {
           throw new Error("Could not fetch LeetCode statistics.");

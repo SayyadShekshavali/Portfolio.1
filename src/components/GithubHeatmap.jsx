@@ -10,7 +10,9 @@ export function GithubHeatmap() {
   useEffect(() => {
     async function fetchGitHubStats() {
       try {
-        const response = await fetch("http://localhost:5000/api/github");
+        const response = await fetch(
+          "https://portfolio-1-kappa-azure.vercel.app/api/github",
+        );
 
         if (!response.ok) {
           throw new Error("Could not fetch GitHub statistics.");
