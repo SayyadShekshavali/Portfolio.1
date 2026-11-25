@@ -74,7 +74,7 @@ export function GithubHeatmap() {
         />
       </div>
 
-      <div className="flex justify-end mt-1 sm:mt-3">
+      <div className="flex justify-end mt-1 ">
         <a
           href="https://github.com/SayyadShekshavali"
           target="_blank"
