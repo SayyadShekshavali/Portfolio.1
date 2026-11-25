@@ -399,3 +399,21 @@ code {
     animation: none;
   }
 }
+
+@media (min-width: 1024px) {
+  .top-greeting {
+    left: -55px;
+    right: auto;
+    top: -30px;
+    z-index: 40;
+  }
+
+  .top-greeting-arrow {
+    left: -35px;
+    right: auto;
+    top: -12px;
+    transform: scaleX(-1);
+    transform-origin: center;
+    z-index: 30;
+  }
+}

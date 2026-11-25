@@ -11,6 +11,8 @@ const greetings = ["NICE TO SEE U!", "HOW R U?", "HV A GREAT DAY!"];
 const Mainpage = () => {
   const [currentTime, setCurrentTime] = useState("");
   const [greetingIndex, setGreetingIndex] = useState(0);
+  const [showGreeting, setShowGreeting] = useState(true);
+  const [greetingAnimationKey, setGreetingAnimationKey] = useState(0);
 
   const hoverCount = useRef(0);
 
@@ -40,10 +42,14 @@ const Mainpage = () => {
     hoverCount.current += 1;
 
     // First hover keeps the opening greeting.
-    // Every hover after that changes to the next greeting.
+    // Every following hover changes to the next greeting.
     if (hoverCount.current > 1) {
       setGreetingIndex((prev) => (prev + 1) % greetings.length);
     }
+
+    // Show text and restart both text and arrow animations
+    setShowGreeting(true);
+    setGreetingAnimationKey((prev) => prev + 1);
   };
 
   return (
@@ -138,18 +144,22 @@ const Mainpage = () => {
           animation: greetingShimmer 2.5s ease-in-out 1s 2;
         }
 
-        /* Wider screens: mirror HI THERE to the left */
+        /* Wider screens: move HI THERE to the left */
         @media (min-width: 1024px) {
           .top-greeting {
-            left: -80px;
+            left: -55px;
             right: auto;
+            top: -30px;
+            z-index: 40;
           }
 
           .top-greeting-arrow {
-            left: -44px;
+            left: -35px;
             right: auto;
+            top: -12px;
             transform: scaleX(-1);
             transform-origin: center;
+            z-index: 30;
           }
         }
 
@@ -184,9 +194,9 @@ const Mainpage = () => {
             tabIndex={0}
           >
             {/* Top greeting */}
-            <span className="top-greeting absolute -top-7 lg:right-[-60px] right-[-80px] z-20 whitespace-nowrap rotate-6">
+            <span className="top-greeting absolute -top-7 right-[-80px] z-40 whitespace-nowrap rotate-6">
               <span className="inline-block px-2 py-1 greeting-pop greeting-float">
-                <span className="greeting-shimmer text-[10px] sm:text-[15px] tracking-wide [font-family:'Zeyada',cursive] lg:!text-black !text-white">
+                <span className="greeting-shimmer text-[10px] sm:text-[15px] tracking-wide [font-family:'Zeyada',cursive] !text-white lg:!text-black">
                   HI THERE!
                 </span>
               </span>
@@ -194,7 +204,7 @@ const Mainpage = () => {
 
             {/* Top animated dotted arrow */}
             <svg
-              className="top-greeting-arrow absolute -top-3 -right-11 z-10 w-20 h-9 text-neutral-600 pointer-events-none"
+              className="top-greeting-arrow absolute -top-3 -right-11 z-30 w-20 h-9 text-neutral-600 pointer-events-none"
               viewBox="0 0 40 36"
               fill="none"
             >
@@ -225,43 +235,48 @@ const Mainpage = () => {
               className="w-20 h-20 sm:w-28 sm:h-28 lg:w-26 lg:h-26 object-cover rounded-2xl border border-neutral-200 shadow-xl"
             />
 
-            {/* Bottom greeting */}
-            <span className="absolute -bottom-5 right-[-100px] z-20 whitespace-nowrap">
-              <span
-                key={greetingIndex}
-                className="inline-block px-2.5 py-1.5 greeting-pop greeting-float"
+            {/* Bottom greeting and arrow */}
+            {showGreeting && (
+              <div
+                key={greetingAnimationKey}
+                className="absolute -bottom-8 right-[-120px] z-30 w-[140px] h-[45px]"
               >
-                <span className="greeting-shimmer text-[10px] sm:text-[13px] tracking-wide [font-family:'Zeyada',cursive] !text-black text-shadow-white-500 text-left">
-                  {greetings[greetingIndex]}
+                {/* Bottom greeting text */}
+                <span className="absolute right-0 bottom-0 whitespace-nowrap">
+                  <span className="inline-block px-2.5 py-1.5 greeting-pop greeting-float">
+                    <span className="greeting-shimmer text-[10px] sm:text-[13px] tracking-wide [font-family:'Zeyada',cursive] !text-black text-left">
+                      {greetings[greetingIndex]}
+                    </span>
+                  </span>
                 </span>
-              </span>
-            </span>
 
-            {/* Bottom animated dotted arrow */}
-            <svg
-              className="absolute -bottom-6 right-[-24px] z-10 w-17 h-8 text-neutral-600 pointer-events-none"
-              viewBox="0 0 40 32"
-              fill="none"
-            >
-              <path
-                pathLength="1"
-                d="M2 3 C14 15 27 19 38 18"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeDasharray="0.01 0.025"
-                strokeLinecap="round"
-                className="draw-arrow-line"
-              />
+                {/* Bottom animated dotted arrow */}
+                <svg
+                  className="absolute left-0 bottom-0 w-17 h-8 text-neutral-600 pointer-events-none"
+                  viewBox="0 0 40 32"
+                  fill="none"
+                >
+                  <path
+                    pathLength="1"
+                    d="M2 3 C14 15 27 19 38 18"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeDasharray="0.01 0.025"
+                    strokeLinecap="round"
+                    className="draw-arrow-line"
+                  />
 
-              <path
-                d="M30 17 L36 18 L33 24"
-                stroke="currentColor"
-                strokeWidth="1.3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="draw-arrow-head"
-              />
-            </svg>
+                  <path
+                    d="M30 17 L36 18 L33 24"
+                    stroke="currentColor"
+                    strokeWidth="1.3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="draw-arrow-head"
+                  />
+                </svg>
+              </div>
+            )}
           </div>
 
           {/* Name and details */}
