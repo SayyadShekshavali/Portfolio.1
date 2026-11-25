@@ -24,7 +24,7 @@ export const meta = {
 
 const WEEKS = 52;
 const X0 = 6;
-const Y0 = 3;
+const Y0 = 2;
 
 export function createGitHubHeatmap(stats) {
   const g = new Grid(meta.cols, meta.rows);
