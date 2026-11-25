@@ -204,7 +204,7 @@ const Mainpage = () => {
 
             {/* Top animated dotted arrow */}
             <svg
-              className="top-greeting-arrow absolute -top-3 -right-40 z-30 w-20 h-9 text-neutral-600 pointer-events-none"
+              className="top-greeting-arrow absolute -top-3 -right-0 z-30 w-20 h-9 text-neutral-600 pointer-events-none"
               viewBox="0 0 40 36"
               fill="none"
             >
@@ -252,7 +252,7 @@ const Mainpage = () => {
 
                 {/* Bottom animated dotted arrow */}
                 <svg
-                  className="absolute left-0 bottom-0 w-17 h-8 text-neutral-600 pointer-events-none"
+                  className="absolute -left-30 bottom-0 w-17 h-8 text-neutral-600 pointer-events-none"
                   viewBox="0 0 40 32"
                   fill="none"
                 >
