@@ -31,7 +31,7 @@ export default function ActivityDashboard() {
       </div>
 
       {/* Only one dashboard exists at a time */}
-      <div className="w-full overflow-x-auto ">
+      <div className="w-full  ">
         <div key={activeTab} className="dashboard-fade">
           {activeTab === "leetcode" ? <HeatmapGrid /> : <GithubHeatmap />}
         </div>
