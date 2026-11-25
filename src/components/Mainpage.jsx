@@ -6,6 +6,8 @@ import { FaGlobeAsia, FaMapMarkerAlt } from "react-icons/fa";
 import About from "./About.jsx";
 import POW from "./POW.jsx";
 import Projects from "./Projects.jsx";
+import Skills from "./SKills.jsx";
+import Achievements from "./Achivements.jsx";
 
 const greetings = ["NICE TO SEE U!", "HOW R U?", "HV A GREAT DAY!"];
 
@@ -345,6 +347,10 @@ const Mainpage = () => {
       <div className="-mt-10">
         <Projects />
       </div>
+      <div>
+        <Skills />
+      </div>
+      <div>{/* <Achievements /> */}</div>
     </section>
   );
 };
