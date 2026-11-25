@@ -24,7 +24,7 @@ export const meta = {
 
 const WEEKS = 52;
 const X0 = 6;
-const Y0 = 3;
+const Y0 = 1;
 const DAY_MS = 86400000;
 
 function dateKey(date) {
