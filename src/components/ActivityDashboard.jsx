@@ -6,7 +6,7 @@ export default function ActivityDashboard() {
   const [activeTab, setActiveTab] = useState("leetcode");
 
   const buttonStyle = (tab) =>
-    `px-5 py-0 rounded-lg font-medium transition-all duration-200 ${
+    `px-5 py-2 rounded-lg font-medium transition-all duration-200 ${
       activeTab === tab
         ? "bg-white text-black"
         : "bg-transparent text-gray-400 hover:text-white"
