@@ -13,7 +13,7 @@ export default function ActivityDashboard() {
     }`;
 
   return (
-    <section className="w-full min-w-0 px-0 sm:-px-0">
+    <section className="w-full min-w-0 px-0 sm:-px-0 ">
       <div className="flex justify-center gap-2 sm:gap-3 mb-1 sm:mb-3">
         <button
           onClick={() => setActiveTab("leetcode")}
@@ -31,7 +31,7 @@ export default function ActivityDashboard() {
       </div>
 
       {/* Only one dashboard exists at a time */}
-      <div className="w-full overflow-x-auto">
+      <div className="w-full overflow-x-auto ">
         <div key={activeTab} className="dashboard-fade">
           {activeTab === "leetcode" ? <HeatmapGrid /> : <GithubHeatmap />}
         </div>
