@@ -6,13 +6,13 @@ import { Highlighter } from "./ui/highlighter";
 const POW = () => {
   return (
     <>
-      <h2 className="sm:p-0 lg:p-5 viga-font p-3">
+      <h2 className="sm:p-0 lg:p-3 viga-font p-3">
         <Highlighter action="underline" color="#36454F  ">
           Proof of
         </Highlighter>{" "}
         <LineShadowText>Work</LineShadowText>
       </h2>
-      <div className=" w-full bg-black lg:p-5 mb-10 rounded-md">
+      <div className=" w-full bg-black lg:p-2 mb-10 rounded-md">
         <ActivityDashboard />
       </div>
     </>
