@@ -7,7 +7,10 @@ const PORT = 5000;
 import { getGitHubDashboard } from "./routes/github.js";
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://portfolio1-kappa-ebon-88.vercel.app",
+    ],
   }),
 );
 app.use(express.json());
