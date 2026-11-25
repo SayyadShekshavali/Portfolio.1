@@ -67,7 +67,7 @@ export function HeatmapGrid() {
 
   return (
     <div className="w-full min-w-0">
-      <div className="w-full overflow-x-auto overscroll-x-contain pb-0 ">
+      <div className="w-full  pb-0 ">
         <pre
           ref={ref}
           className="block w-max min-w-full"
