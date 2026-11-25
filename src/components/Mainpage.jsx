@@ -6,7 +6,7 @@ import { FaGlobeAsia, FaMapMarkerAlt } from "react-icons/fa";
 import About from "./About.jsx";
 import POW from "./POW.jsx";
 
-const greetings = ["NICE TO SEE U!", "HOW R U?", "HAVE A GREAT DAY!"];
+const greetings = ["NICE TO SEE U!", "HOW R U?", "HV A GREAT DAY!"];
 
 const Mainpage = () => {
   const [currentTime, setCurrentTime] = useState("");
@@ -186,7 +186,7 @@ const Mainpage = () => {
             {/* Top greeting */}
             <span className="top-greeting absolute -top-7 right-[-80px] z-20 whitespace-nowrap rotate-6">
               <span className="inline-block px-2 py-1 greeting-pop greeting-float">
-                <span className="greeting-shimmer text-[10px] sm:text-[15px] tracking-wide [font-family:'Zeyada',cursive] !text-white">
+                <span className="greeting-shimmer text-[10px] sm:text-[15px] tracking-wide [font-family:'Zeyada',cursive] !text-red-800">
                   HI THERE!
                 </span>
               </span>
@@ -226,12 +226,12 @@ const Mainpage = () => {
             />
 
             {/* Bottom greeting */}
-            <span className="absolute -bottom-5 right-[-120px] z-20 whitespace-nowrap">
+            <span className="absolute -bottom-5 right-[-100px] z-20 whitespace-nowrap">
               <span
                 key={greetingIndex}
                 className="inline-block px-2.5 py-1.5 greeting-pop greeting-float"
               >
-                <span className="greeting-shimmer text-[10px] sm:text-[13px] tracking-wide [font-family:'Zeyada',cursive] !text-black text-shadow-white-500">
+                <span className="greeting-shimmer text-[10px] sm:text-[13px] tracking-wide [font-family:'Zeyada',cursive] !text-black text-shadow-white-500 text-left">
                   {greetings[greetingIndex]}
                 </span>
               </span>
