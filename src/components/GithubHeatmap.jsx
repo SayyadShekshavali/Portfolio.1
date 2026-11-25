@@ -63,7 +63,7 @@ export function GithubHeatmap() {
       <div className="w-full overflow-x-auto overscroll-x-contain pb-0 ">
         <pre
           ref={ref}
-          className="block w-max min-w-full"
+          className="block w-full overflow-hidden"
           style={{
             fontSize: "clamp(9px, 2vw, 19px)",
             lineHeight: 1.2,
@@ -74,7 +74,7 @@ export function GithubHeatmap() {
         />
       </div>
 
-      <div className="flex justify-end ">
+      <div className="flex justify-end -mt-9 ">
         <a
           href="https://github.com/SayyadShekshavali"
           target="_blank"
