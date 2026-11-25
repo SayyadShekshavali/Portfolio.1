@@ -184,9 +184,9 @@ const Mainpage = () => {
             tabIndex={0}
           >
             {/* Top greeting */}
-            <span className="top-greeting absolute -top-7 right-[-80px] z-20 whitespace-nowrap rotate-6">
+            <span className="top-greeting absolute -top-7 lg:right-[-60px] right-[-80px] z-20 whitespace-nowrap rotate-6">
               <span className="inline-block px-2 py-1 greeting-pop greeting-float">
-                <span className="greeting-shimmer text-[10px] sm:text-[15px] tracking-wide [font-family:'Zeyada',cursive] lg:!text-red-800 !text-black">
+                <span className="greeting-shimmer text-[10px] sm:text-[15px] tracking-wide [font-family:'Zeyada',cursive] lg:!text-black !text-white">
                   HI THERE!
                 </span>
               </span>
