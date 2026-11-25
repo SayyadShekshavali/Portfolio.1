@@ -81,7 +81,7 @@ export function HeatmapGrid() {
         />
       </div>
 
-      <div className="flex justify-end -mt-10">
+      <div className="flex justify-end ">
         <a
           href="https://leetcode.com/u/SayyadShekshavali/"
           target="_blank"
