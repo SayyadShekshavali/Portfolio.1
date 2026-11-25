@@ -5,6 +5,7 @@ import RoleRotator from "./RoleRotator.jsx";
 import { FaGlobeAsia, FaMapMarkerAlt } from "react-icons/fa";
 import About from "./About.jsx";
 import POW from "./POW.jsx";
+import Projects from "./Projects.jsx";
 
 const greetings = ["NICE TO SEE U!", "HOW R U?", "HV A GREAT DAY!"];
 
@@ -252,7 +253,7 @@ const Mainpage = () => {
 
                 {/* Bottom animated dotted arrow */}
                 <svg
-                  className="absolute -left-30 bottom-0 w-17 h-8 text-neutral-600 pointer-events-none"
+                  className="absolute -left-5 bottom-3 w-17 h-8 text-neutral-600 pointer-events-none"
                   viewBox="0 0 40 32"
                   fill="none"
                 >
@@ -340,6 +341,9 @@ const Mainpage = () => {
       {/* Proof of Work */}
       <div className="w-full min-w-0 mx-auto">
         <POW />
+      </div>
+      <div className="-mt-10">
+        <Projects />
       </div>
     </section>
   );
