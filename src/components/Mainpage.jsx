@@ -186,7 +186,7 @@ const Mainpage = () => {
             {/* Top greeting */}
             <span className="top-greeting absolute -top-7 right-[-80px] z-20 whitespace-nowrap rotate-6">
               <span className="inline-block px-2 py-1 greeting-pop greeting-float">
-                <span className="greeting-shimmer text-[10px] sm:text-[15px] tracking-wide [font-family:'Zeyada',cursive] !text-red-800">
+                <span className="greeting-shimmer text-[10px] sm:text-[15px] tracking-wide [font-family:'Zeyada',cursive] lg:!text-red-800 !text-white">
                   HI THERE!
                 </span>
               </span>
