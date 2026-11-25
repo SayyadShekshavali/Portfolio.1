@@ -70,7 +70,7 @@ export function HeatmapGrid() {
       <div className="w-full  pb-0 ">
         <pre
           ref={ref}
-          className="block w-max min-w-full"
+          className="block w-full overflow-hidden"
           style={{
             fontSize: "clamp(9px, 2vw, 19px)",
             lineHeight: 1.2,
