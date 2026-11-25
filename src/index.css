@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Viga&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zeyada&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -339,4 +340,62 @@ code {
 .dashboard-fade {
   width: 100%;
   animation: dashboardFade 0.35s ease-out;
+}
+@keyframes greetingPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(12deg);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.12) rotate(-3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes greetingFloat {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -4px;
+  }
+}
+
+@keyframes greetingShimmer {
+  0% {
+    background-position: -150% center;
+  }
+  100% {
+    background-position: 150% center;
+  }
+}
+
+.greeting-pop {
+  animation: greetingPop 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.greeting-float {
+  animation: greetingFloat 2.5s ease-in-out 0.8s infinite;
+}
+
+.greeting-shimmer {
+  background: linear-gradient(110deg, #737373 25%, #b5a58b 45%, #737373 65%);
+  background-size: 250% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: greetingShimmer 2.5s ease-in-out 1s 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .greeting-pop,
+  .greeting-float,
+  .greeting-shimmer {
+    animation: none;
+  }
 }
