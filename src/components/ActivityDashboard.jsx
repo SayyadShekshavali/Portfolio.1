@@ -6,7 +6,7 @@ export default function ActivityDashboard() {
   const [activeTab, setActiveTab] = useState("leetcode");
 
   const buttonStyle = (tab) =>
-    `px-5 py-2 rounded-lg font-medium transition-all duration-200 ${
+    `px-5 py-0 rounded-lg font-medium transition-all duration-200 ${
       activeTab === tab
         ? "bg-white text-black"
         : "bg-transparent text-gray-400 hover:text-white"
@@ -14,7 +14,7 @@ export default function ActivityDashboard() {
 
   return (
     <section className="w-full min-w-0 px-0 sm:-px-0">
-      <div className="flex justify-center gap-2 sm:gap-3 mb-3 sm:mb-6">
+      <div className="flex justify-center gap-2 sm:gap-3 mb-1 sm:mb-3">
         <button
           onClick={() => setActiveTab("leetcode")}
           className={buttonStyle("leetcode")}
