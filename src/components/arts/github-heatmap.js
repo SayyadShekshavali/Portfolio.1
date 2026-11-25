@@ -87,7 +87,7 @@ export function createGitHubHeatmap(stats) {
     });
 
     // GitHub-specific footer in place of LeetCode details.
-    const footerY = Y0 + 8;
+    const footerY = Y0 + 6;
 
     g.text(X0, footerY, "GitHub activity", "1");
 

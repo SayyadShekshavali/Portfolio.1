@@ -124,7 +124,7 @@ export function createLeetCodeHeatmap(stats) {
       if (label) g.text(1, Y0 + i, label, "1");
     });
 
-    const footerY = Y0 + 8;
+    const footerY = Y0 + 6;
 
     g.text(X0, footerY, "LeetCode activity", "1");
     g.text(X0, footerY + 2, "Max streak", "1");
