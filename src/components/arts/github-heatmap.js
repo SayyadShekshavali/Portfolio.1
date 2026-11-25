@@ -30,14 +30,14 @@ export function createGitHubHeatmap(stats) {
   const g = new Grid(meta.cols, meta.rows);
 
   const totalContributions = Number(stats.totalContributions) || 0;
+
   const totalRepos = Number(stats.totalRepos) || 0;
   const totalStars = Number(stats.totalStars) || 0;
 
   const N = WEEKS * 7;
   const speed = 60;
 
-  // Create a consistent decorative grid.
-  // Daily contribution data is not being fetched.
+  // Generate decorative activity levels.
   const levels = Array.from({ length: N }, () => {
     const value = Math.random();
 
@@ -45,6 +45,7 @@ export function createGitHubHeatmap(stats) {
     if (value < 0.5) return 1;
     if (value < 0.72) return 2;
     if (value < 0.9) return 3;
+
     return 4;
   });
 
@@ -54,7 +55,7 @@ export function createGitHubHeatmap(stats) {
     const elapsed = Math.max(0, t);
     const upto = Math.min(N, Math.floor(elapsed * speed));
 
-    // Top statistics: same positions as LeetCode.
+    // Top statistics.
     g.text(
       X0,
       0,
@@ -64,7 +65,8 @@ export function createGitHubHeatmap(stats) {
 
     g.text(X0 + 36, 0, `${totalRepos} repositories`, "6");
 
-    // Same 52-week grid layout.
+    // 52-week activity grid.
+    // Same positioning as LeetCode.
     for (let d = 0; d < N; d++) {
       const week = Math.floor(d / 7);
       const dayOfWeek = d % 7;
@@ -82,11 +84,14 @@ export function createGitHubHeatmap(stats) {
       }
     }
 
+    // Weekday labels.
     ["", "Mon", "", "Wed", "", "Fri", ""].forEach((label, i) => {
-      if (label) g.text(1, Y0 + i, label, "1");
+      if (label) {
+        g.text(1, Y0 + i, label, "1");
+      }
     });
 
-    // GitHub-specific footer in place of LeetCode details.
+    // GitHub footer.
     const footerY = Y0 + 8;
 
     g.text(X0, footerY, "GitHub activity", "1");
@@ -97,6 +102,7 @@ export function createGitHubHeatmap(stats) {
     g.text(X0 + 27, footerY + 2, "Total stars", "1");
     g.text(X0 + 38, footerY + 2, String(totalStars), "6");
 
+    // Activity legend.
     const legendX = meta.cols - 26;
 
     g.text(legendX, footerY, "Less", "1");
@@ -106,8 +112,6 @@ export function createGitHubHeatmap(stats) {
     }
 
     g.text(legendX + 16, footerY, "More", "1");
-
-    const linksY = footerY + 2;
 
     return g.frame();
   };
