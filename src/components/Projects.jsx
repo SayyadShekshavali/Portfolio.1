@@ -6,10 +6,10 @@ const projects = [
   {
     number: "01",
     title: "WaffleMania",
-    image: "/projects/project-1.png",
+    image: "/projects/project1.png",
     poster: "/projects/poster1.jpeg",
     description:
-      "A web project built with React and Tailwind CSS. Instead of manually searching multiple systems, employees can ask questions in natural language and receive AI-generated answers grounded in the organization's indexed knowledge. Instead of manually searching multiple systems, employees can ask questions in natural language and receive AI-generated answers grounded in the organization's indexed knowledge.",
+      "Built WaffleMania 🧇, a modern and responsive React website featuring smooth animations and clean, reusable components. Focused on delivering a visually appealing UI with seamless interactions and a polished user experience.",
     tech: ["React", "Tailwind CSS"],
     github: "https://github.com/SayyadShekshavali/Wafflemania",
     demo: "https://wafflemania.vercel.app/",
@@ -20,7 +20,7 @@ const projects = [
     image: "/projects/project2.webp",
     poster: "/projects/poster2.jpeg",
     description:
-      "A task management application built with a modern full-stack setup.",
+      "Developed TaskPilot, an AI-powered real-time task management platform for assigning tasks and tracking team progress. Features live cursor monitoring, AI-powered code reviews, and one-click code corrections to boost team productivity",
     tech: ["React", "Node.js", "Express.js", "MongoDB", "Zustand"],
     github: "https://github.com/SayyadShekshavali/TaskPilot",
     demo: "https://task-pilot-three-roan.vercel.app/",
@@ -28,10 +28,10 @@ const projects = [
   {
     number: "03",
     title: "Insight RAG",
-    image: "/projects/project2.png",
+    image: "/projects/project3.webp",
     poster: "/projects/poster3.jpeg",
     description:
-      "Instead of manually searching multiple systems, employees can ask questions in natural language and receive AI-generated answers grounded in the organization's indexed knowledge. Instead of manually searching multiple systems, employees can ask questions in natural language and receive AI-generated answers grounded in the organization's indexed knowledge.",
+      "Built an AI-powered knowledge assistant that enables employees to find information across organizational systems using natural language queries. Delivers quick, accurate, AI-generated answers from indexed company knowledge.",
     tech: [
       "React",
       "Node.js",
