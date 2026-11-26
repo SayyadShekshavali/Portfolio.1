@@ -69,40 +69,40 @@ function ExperienceCard({ experience, isOpen, onToggle, index }) {
       {/* Timeline dot */}
       <span className="absolute left-[3px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-gray-500 bg-white transition-transform duration-500 sm:h-3 sm:w-3 lg:top-2" />
 
-      <div className="border-b border-gray-200 pb-3 sm:pb-4 lg:pb-5">
+      <div className="border-b border-gray-200 pb-2.5 sm:pb-3 lg:pb-4">
         {/* Experience heading */}
         <button
           onClick={onToggle}
           aria-expanded={isOpen}
-          className="group flex w-full items-start justify-between gap-2 text-left sm:gap-3"
+          className="group flex w-full items-start justify-between gap-2 text-left sm:gap-2.5"
         >
           <div className="min-w-0 flex-1">
-            <span className="mb-1 block text-[8px] font-semibold tracking-[0.15em] text-gray-500 sm:mb-1.5 sm:text-[9px] sm:tracking-[0.18em] lg:text-[10px] lg:tracking-[0.2em]">
+            <span className="mb-1 block text-[7px] font-semibold tracking-[0.15em] text-gray-500 sm:mb-1.5 sm:text-[8px] sm:tracking-[0.18em] lg:text-[9px] lg:tracking-[0.2em]">
               {experience.type}
             </span>
 
-            <h3 className="text-sm font-semibold leading-snug text-gray-900 transition-colors duration-300 group-hover:text-gray-600 sm:text-base lg:text-xl">
+            <h3 className="text-xs font-semibold leading-snug text-gray-900 transition-colors duration-300 group-hover:text-gray-600 sm:text-sm lg:text-lg">
               {experience.role}
             </h3>
 
-            <p className="mt-0.5 text-[10px] text-gray-600 sm:text-xs lg:text-sm">
+            <p className="mt-0.5 text-[9px] text-gray-600 sm:text-[10px] lg:text-xs">
               {experience.company}
             </p>
           </div>
 
           {/* Duration and arrow */}
-          <div className="flex shrink-0 items-start gap-1 sm:gap-2 lg:gap-3">
-            <span className="pt-1 text-right text-[8px] leading-relaxed text-gray-500 sm:text-[10px] lg:text-xs">
+          <div className="flex shrink-0 items-start gap-1 sm:gap-1.5 lg:gap-2">
+            <span className="pt-1 text-right text-[7px] leading-relaxed text-gray-500 sm:text-[9px] lg:text-[10px]">
               {experience.period}
               <span className="mt-0.5 hidden sm:block">
                 {experience.location}
               </span>
             </span>
 
-            <span className="flex h-6 w-6 items-center justify-center rounded-full transition-colors duration-300 group-hover:bg-gray-100 sm:h-7 sm:w-7">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full transition-colors duration-300 group-hover:bg-gray-100 sm:h-6 sm:w-6">
               <ChevronDown
-                size={14}
-                className={`text-gray-500 transition-transform duration-500 sm:h-4 sm:w-4 ${
+                size={13}
+                className={`text-gray-500 transition-transform duration-500 sm:h-3.5 sm:w-3.5 ${
                   isOpen ? "rotate-180" : ""
                 }`}
               />
@@ -114,28 +114,29 @@ function ExperienceCard({ experience, isOpen, onToggle, index }) {
         <div
           className={`grid transition-all duration-500 ease-in-out ${
             isOpen
-              ? "mt-2.5 grid-rows-[1fr] opacity-100 sm:mt-3"
+              ? "mt-2 grid-rows-[1fr] opacity-100 sm:mt-2.5"
               : "mt-0 grid-rows-[0fr] opacity-0"
           }`}
         >
           <div className="overflow-hidden">
             <div
-              className={`space-y-2 transition-transform duration-500 sm:space-y-3 ${
+              className={`space-y-1.5 transition-transform duration-500 sm:space-y-2 ${
                 isOpen ? "translate-y-0" : "-translate-y-2"
               }`}
             >
-              <p className="max-w-2xl text-[10px] leading-5 text-gray-600 sm:text-xs sm:leading-6 lg:text-sm">
+              {/* Description */}
+              <p className="max-w-2xl text-[9px] leading-4 text-gray-600 sm:text-[10px] sm:leading-5 lg:text-xs">
                 {experience.description}
               </p>
 
               {/* Highlights */}
-              <ul className="space-y-1.5 sm:space-y-2">
+              <ul className="space-y-1 sm:space-y-1.5">
                 {experience.highlights.map((item, index) => (
                   <li
                     key={index}
-                    className="flex gap-2 text-[10px] leading-relaxed text-gray-700 sm:gap-3 sm:text-xs lg:text-sm"
+                    className="flex gap-2 text-[9px] leading-relaxed text-gray-700 sm:gap-2.5 sm:text-[10px] lg:text-xs"
                   >
-                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-gray-400 sm:h-1.5 sm:w-1.5" />
+                    <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-gray-400 sm:h-1.5 sm:w-1.5" />
                     {item}
                   </li>
                 ))}
@@ -147,7 +148,7 @@ function ExperienceCard({ experience, isOpen, onToggle, index }) {
                   <span
                     key={tech}
                     style={{ transitionDelay: `${index * 50}ms` }}
-                    className="rounded-full border border-gray-200 px-2 py-1 text-[8px] text-gray-600 transition-all duration-300 hover:-translate-y-1 hover:border-gray-400 hover:bg-gray-50 sm:px-2.5 sm:text-[9px] lg:text-[10px]"
+                    className="rounded-full border border-gray-200 px-1.5 py-0.5 text-[7px] text-gray-600 transition-all duration-300 hover:-translate-y-1 hover:border-gray-400 hover:bg-gray-50 sm:px-2 sm:py-0.5 sm:text-[8px] lg:text-[9px]"
                   >
                     {tech}
                   </span>
@@ -156,8 +157,8 @@ function ExperienceCard({ experience, isOpen, onToggle, index }) {
 
               {/* Certificate */}
               {experience.certificateId && (
-                <div className="flex items-center gap-2 pt-1 text-[9px] text-gray-500 sm:text-[10px] lg:text-[11px]">
-                  <Icon size={12} />
+                <div className="flex items-center gap-2 pt-1 text-[8px] text-gray-500 sm:text-[9px] lg:text-[10px]">
+                  <Icon size={11} />
                   Certificate ID: {experience.certificateId}
                 </div>
               )}
@@ -175,26 +176,26 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="w-full bg-white px-[3%] pt-3 pb-6 text-left sm:px-[4%] sm:pt-3 sm:pb-6 lg:px-[8%] lg:pt-6 lg:pb-12"
+      className="w-full bg-white px-[3%] pt-2.5 pb-5 text-left sm:px-[4%] sm:pt-2.5 sm:pb-5 lg:px-[8%] lg:pt-5 lg:pb-10"
     >
       <div className="mx-auto max-w-5xl">
         {/* Section heading */}
-        <div className="mb-5 animate-[fadeInUp_0.8s_ease-out_both] sm:mb-6 lg:mb-8">
-          <p className="mb-1.5 text-[8px] font-semibold uppercase tracking-[0.25em] text-gray-500 sm:mb-2 sm:text-[9px] lg:text-[10px] lg:tracking-[0.3em]">
+        <div className="mb-4 animate-[fadeInUp_0.8s_ease-out_both] sm:mb-5 lg:mb-6">
+          <p className="mb-1 text-[7px] font-semibold uppercase tracking-[0.2em] text-gray-500 sm:mb-1.5 sm:text-[8px] lg:text-[9px] lg:tracking-[0.25em]">
             The Journey So Far
           </p>
 
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl lg:text-4xl">
+          <h2 className="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl lg:text-3xl">
             Where I've Grown.
           </h2>
 
-          <p className="mt-1.5 max-w-lg text-xs leading-5 text-gray-500 sm:mt-2 sm:text-sm sm:leading-6">
+          <p className="mt-1 max-w-lg text-[10px] leading-4 text-gray-500 sm:mt-1.5 sm:text-xs sm:leading-5">
             A timeline of experiences, contributions and continuous learning.
           </p>
         </div>
 
         {/* Experience timeline */}
-        <div className="relative space-y-3 before:absolute before:bottom-3 before:left-[7px] before:top-2 before:w-px before:bg-gray-200 sm:space-y-4 sm:before:left-[8px]">
+        <div className="relative space-y-2.5 before:absolute before:bottom-2 before:left-[7px] before:top-2 before:w-px before:bg-gray-200 sm:space-y-3 sm:before:left-[8px]">
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={experience.id}
@@ -209,7 +210,7 @@ export default function Experience() {
         </div>
 
         {/* Footer */}
-        <p className="mt-4 pl-6 text-[8px] tracking-wide text-gray-400 sm:mt-5 sm:pl-8 sm:text-[9px] lg:text-[10px]">
+        <p className="mt-3 pl-6 text-[7px] tracking-wide text-gray-400 sm:mt-4 sm:pl-8 sm:text-[8px] lg:text-[9px]">
           ALWAYS BUILDING. ALWAYS LEARNING.
         </p>
       </div>
