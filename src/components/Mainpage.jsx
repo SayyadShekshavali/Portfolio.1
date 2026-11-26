@@ -7,8 +7,11 @@ import About from "./About.jsx";
 import POW from "./POW.jsx";
 import Projects from "./Projects.jsx";
 import Skills from "./SKills.jsx";
-import Achievements from "./Achivements.jsx";
 import Experience from "./Experience.jsx";
+
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
+import { FiFileText } from "react-icons/fi";
 
 const greetings = ["NICE TO SEE U!", "HOW R U?", "HV A GREAT DAY!"];
 
@@ -17,8 +20,25 @@ const Mainpage = () => {
   const [greetingIndex, setGreetingIndex] = useState(0);
   const [showGreeting, setShowGreeting] = useState(true);
   const [greetingAnimationKey, setGreetingAnimationKey] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const hoverCount = useRef(0);
+
+  // Detect mobile screen size
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 639px)");
+
+    const handleScreenChange = () => {
+      setIsMobile(mediaQuery.matches);
+    };
+
+    handleScreenChange();
+    mediaQuery.addEventListener("change", handleScreenChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleScreenChange);
+    };
+  }, []);
 
   // Update current time
   useEffect(() => {
@@ -41,17 +61,37 @@ const Mainpage = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Change greeting one by one on hover
+  // Hide bottom greeting after 3 seconds
+  useEffect(() => {
+    if (!showGreeting) return;
+
+    const timeout = setTimeout(() => {
+      setShowGreeting(false);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, [showGreeting, greetingAnimationKey]);
+
+  // Mobile: automatically show greetings every 5 seconds
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const interval = setInterval(() => {
+      setGreetingIndex((prev) => (prev + 1) % greetings.length);
+      setShowGreeting(true);
+      setGreetingAnimationKey((prev) => prev + 1);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isMobile]);
+
+  // Desktop and tablet: change greeting on every hover
   const handleGreetingHover = () => {
+    if (isMobile) return;
+
     hoverCount.current += 1;
 
-    // First hover keeps the opening greeting.
-    // Every following hover changes to the next greeting.
-    if (hoverCount.current > 1) {
-      setGreetingIndex((prev) => (prev + 1) % greetings.length);
-    }
-
-    // Show text and restart both text and arrow animations
+    setGreetingIndex((prev) => (prev + 1) % greetings.length);
     setShowGreeting(true);
     setGreetingAnimationKey((prev) => prev + 1);
   };
@@ -148,15 +188,16 @@ const Mainpage = () => {
           animation: greetingShimmer 2.5s ease-in-out 1s 2;
         }
 
-        /* Wider screens: move HI THERE to the left */
+        /* Desktop: move only the top greeting text farther left */
         @media (min-width: 1024px) {
           .top-greeting {
-            left: -55px;
+            left: -105px;
             right: auto;
             top: -30px;
             z-index: 40;
           }
 
+          /* Original desktop arrow positioning preserved */
           .top-greeting-arrow {
             left: -35px;
             right: auto;
@@ -173,7 +214,7 @@ const Mainpage = () => {
           .greeting-pop,
           .greeting-float,
           .greeting-shimmer {
-            animation: none;
+            animation: none !important;
             stroke-dashoffset: 0;
             opacity: 1;
             transform: none;
@@ -198,7 +239,7 @@ const Mainpage = () => {
             tabIndex={0}
           >
             {/* Top greeting */}
-            <span className="top-greeting absolute -top-7 right-[-80px] z-40 whitespace-nowrap rotate-6">
+            <span className="top-greeting absolute -top-0 right-[-80px] z-40 whitespace-nowrap rotate-6">
               <span className="inline-block px-2 py-1 greeting-pop greeting-float">
                 <span className="greeting-shimmer text-[10px] sm:text-[15px] tracking-wide [font-family:'Zeyada',cursive] !text-white lg:!text-black">
                   HI THERE!
@@ -206,7 +247,7 @@ const Mainpage = () => {
               </span>
             </span>
 
-            {/* Top animated dotted arrow */}
+            {/* Top animated dotted arrow - original positioning */}
             <svg
               className="top-greeting-arrow absolute -top-3 -right-0 z-30 w-20 h-9 text-neutral-600 pointer-events-none"
               viewBox="0 0 40 36"
@@ -329,15 +370,100 @@ const Mainpage = () => {
       </div>
 
       {/* Introduction */}
-      <div className="w-full mx-auto px-4 sm:px-0 lg:px-8 md:px-4 md:ml-5 md:mr-3 mt-3">
-        <p className="sm:text-sm md:text-lg lg:text-lg leading-relaxed text-neutral-600 text-left">
+      <div className="w-full box-border mx-auto px-4 sm:px-4 md:px-4 lg:px-8 mt-3">
+        <p className="text-sm md:text-base lg:text-lg leading-relaxed text-neutral-600 text-left">
           Driven by creativity, perseverance, curiosity, and a passion for
           continuous growth.
         </p>
+
+        <div className="flex items-center justify-end gap-3 mt-1 -ml-4 w-full">
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/sayyad-shekshavali/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="relative group text-neutral-500 hover:text-blue-600 hover:scale-125 transition-all duration-300"
+          >
+            <FaLinkedin className="w-4 h-4 md:w-[18px] md:h-[18px] lg:w-5 lg:h-5" />
+
+            <span
+              className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2
+      px-2 py-1 text-xs text-white bg-neutral-800 rounded-md
+      opacity-0 invisible group-hover:opacity-100 group-hover:visible
+      transition-all duration-300 whitespace-nowrap pointer-events-none"
+            >
+              LinkedIn
+            </span>
+          </a>
+
+          {/* LeetCode */}
+          <a
+            href="https://leetcode.com/u/SayyadShekshavali/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LeetCode"
+            className="relative group text-neutral-500 hover:text-yellow-500 hover:scale-125 transition-all duration-300"
+          >
+            <SiLeetcode className="w-4 h-4 md:w-[18px] md:h-[18px] lg:w-5 lg:h-5" />
+
+            <span
+              className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2
+      px-2 py-1 text-xs text-white bg-neutral-800 rounded-md
+      opacity-0 invisible group-hover:opacity-100 group-hover:visible
+      transition-all duration-300 whitespace-nowrap pointer-events-none"
+            >
+              LeetCode
+            </span>
+          </a>
+
+          {/* Resume */}
+          <a
+            href="/Common_SE.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Resume"
+            className="relative group text-neutral-500 hover:text-green-600 hover:scale-125 transition-all duration-300"
+          >
+            <FiFileText className="w-4 h-4 md:w-[18px] md:h-[18px] lg:w-5 lg:h-5" />
+
+            <span
+              className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2
+      px-2 py-1 text-xs text-white bg-neutral-800 rounded-md
+      opacity-0 invisible group-hover:opacity-100 group-hover:visible
+      transition-all duration-300 whitespace-nowrap pointer-events-none"
+            >
+              Resume
+            </span>
+          </a>
+
+          {/* GitHub */}
+          <a
+            href="https://github.com/SayyadShekshavali"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="relative group text-neutral-500 hover:text-neutral-900 hover:scale-125 transition-all duration-300"
+          >
+            <FaGithub className="w-4 h-4 md:w-[18px] md:h-[18px] lg:w-5 lg:h-5" />
+
+            <span
+              className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2
+      px-2 py-1 text-xs text-white bg-neutral-800 rounded-md
+      opacity-0 invisible group-hover:opacity-100 group-hover:visible
+      transition-all duration-300 whitespace-nowrap pointer-events-none"
+            >
+              GitHub
+            </span>
+          </a>
+        </div>
       </div>
-      <div>
+
+      {/* Experience */}
+      <div className="lg:-mt-0 ">
         <Experience />
       </div>
+
       {/* About section */}
       <div className="w-full min-w-0 mx-auto mt-0 md:mx-3">
         <About />
@@ -347,13 +473,16 @@ const Mainpage = () => {
       <div className="w-full min-w-0 mx-auto">
         <POW />
       </div>
+
+      {/* Projects */}
       <div className="-mt-10">
         <Projects />
       </div>
+
+      {/* Skills */}
       <div>
         <Skills />
       </div>
-      <div>{/* <Achievements /> */}</div>
     </section>
   );
 };

@@ -175,7 +175,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="w-full bg-white px-[3%] py-6 text-left sm:px-[4%] sm:py-8 lg:px-[8%] lg:py-12"
+      className="w-full bg-white px-[3%] pt-3 pb-6 text-left sm:px-[4%] sm:pt-3 sm:pb-6 lg:px-[8%] lg:pt-6 lg:pb-12"
     >
       <div className="mx-auto max-w-5xl">
         {/* Section heading */}
