@@ -353,7 +353,8 @@
 
 @media (min-width: 901px) {
   .project-flip-card {
-    height: 350px;
+    height: 330px;
+    width: 280px;
   }
 
   .project-card-back {

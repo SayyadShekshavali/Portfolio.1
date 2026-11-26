@@ -8,6 +8,7 @@ import POW from "./POW.jsx";
 import Projects from "./Projects.jsx";
 import Skills from "./SKills.jsx";
 import Achievements from "./Achivements.jsx";
+import Experience from "./Experience.jsx";
 
 const greetings = ["NICE TO SEE U!", "HOW R U?", "HV A GREAT DAY!"];
 
@@ -334,7 +335,9 @@ const Mainpage = () => {
           continuous growth.
         </p>
       </div>
-
+      <div>
+        <Experience />
+      </div>
       {/* About section */}
       <div className="w-full min-w-0 mx-auto mt-0 md:mx-3">
         <About />
