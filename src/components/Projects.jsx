@@ -31,7 +31,7 @@ const projects = [
     description:
       "Insight RAG is a multi-tenant AI-powered knowledge management platform that centralizes engineering information from GitHub, Jira, Google Drive, and documents. It uses Hybrid RAG (Vector Search + BM25) to retrieve relevant organizational knowledge and generate context-aware answers using Google Gemini.",
     image: "/projects/project-3.png",
-    poster: "/projects/poster-3.png",
+    poster: "/projects/poster3.jpeg",
     tech: [
       "React",
       "Node.js",
@@ -52,7 +52,7 @@ const projects = [
     description:
       "A creative digital experience focused on usability, performance and elegant visual design.",
     image: "/projects/project-4.png",
-    poster: "/projects/poster-4.png",
+    poster: "/projects/poster4.jpeg",
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/yourusername/project-four",
     demo: "https://your-project-four.vercel.app",
