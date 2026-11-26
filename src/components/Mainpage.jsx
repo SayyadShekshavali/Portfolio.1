@@ -240,7 +240,7 @@ const Mainpage = () => {
             tabIndex={0}
           >
             {/* Top greeting */}
-            <span className="top-greeting absolute -top-0 right-[-80px] z-40 whitespace-nowrap rotate-6">
+            <span className="top-greeting absolute -top-4 right-[-80px] sm:-right-[100px]  z-40 whitespace-nowrap rotate-6">
               <span className="inline-block px-2 py-1 greeting-pop greeting-float">
                 <span className="greeting-shimmer text-[10px] sm:text-[15px] tracking-wide [font-family:'Zeyada',cursive] !text-white lg:!text-black">
                   HI THERE!
@@ -250,7 +250,7 @@ const Mainpage = () => {
 
             {/* Top animated dotted arrow - original positioning */}
             <svg
-              className="top-greeting-arrow absolute -top-3 -right-0 z-30 w-20 h-9 text-neutral-600 pointer-events-none"
+              className="top-greeting-arrow absolute -top-3 -right-12  z-30 w-20 h-9 text-neutral-600 pointer-events-none"
               viewBox="0 0 40 36"
               fill="none"
             >
