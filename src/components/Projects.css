@@ -1,12 +1,131 @@
 /* =================================
-   PROJECT GRID
+   PROJECT SECTION
 ================================= */
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+.projects-section {
   width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.projects-section *,
+.projects-section *::before,
+.projects-section *::after {
+  box-sizing: border-box;
+}
+
+.projects-showcase {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(16px, 4vw, 48px);
+}
+
+/* =================================
+   PROJECT HEADING
+================================= */
+
+.projects-heading {
+  margin-bottom: clamp(24px, 4vw, 42px);
+}
+
+.projects-heading h2 {
+  color: #f5f5f5;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.1;
+}
+
+.projects-heading h2 span {
+  color: #a3e635;
+}
+
+.projects-subtitle {
+  color: #a3e635;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+}
+
+/* =================================
+   PROJECT SELECTOR
+================================= */
+
+.projects-list {
+  width: 100%;
+  min-width: 0;
+}
+
+.project-selector {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: clamp(7px, 1.2vw, 14px);
+  padding: clamp(12px, 1.7vw, 20px) 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: #777d75;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.project-selector:hover,
+.project-selector.active {
+  color: #f5f5f5;
+}
+
+.project-selector-number {
+  flex-shrink: 0;
+  color: #a3e635;
+  font-size: clamp(8px, 0.8vw, 11px);
+  letter-spacing: 0.12em;
+}
+
+.project-selector-title {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: clamp(15px, 2vw, 25px);
+  font-weight: 600;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.project-selector-arrow {
+  flex-shrink: 0;
+  margin-left: auto;
+  color: #a3e635;
+  font-size: clamp(15px, 1.5vw, 30px);
+  opacity: 0;
+  transform: translate(-5px, 5px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  pointer-events: none;
+}
+
+.project-selector:hover .project-selector-arrow,
+.project-selector.active .project-selector-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* =================================
+   ACTIVE CARD AREA
+================================= */
+
+.projects-active-card {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.project-tilt-wrapper {
+  width: 85%;
+  max-width: 370px;
+  min-width: 0;
 }
 
 /* =================================
@@ -15,8 +134,8 @@
 
 .project-flip-card {
   width: 100%;
+  height: 400px;
   min-width: 0;
-  height: 300px;
   perspective: 1400px;
 }
 
@@ -42,7 +161,6 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  box-sizing: border-box;
   border: 1px solid rgba(163, 230, 53, 0.25);
   border-radius: 14px;
   background: #101510;
@@ -76,7 +194,7 @@
     #101510;
 }
 
-.project-poster-image {
+.project-card-poster {
   position: absolute;
   z-index: 1;
   inset: 0;
@@ -85,55 +203,43 @@
   object-fit: cover;
 }
 
-.project-poster-fallback {
-  position: relative;
-  z-index: 0;
+.project-card-front-overlay {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
   display: flex;
-  width: 100%;
-  height: 100%;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
-  text-align: center;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 20px;
+  background: linear-gradient(
+    180deg,
+    transparent 25%,
+    rgba(0, 0, 0, 0.25) 55%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
 }
 
-.project-poster-number {
+.project-card-number {
   color: #a3e635;
   font-size: 10px;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
 }
 
-.project-poster-fallback h3 {
-  margin-top: 16px;
-  color: #f5f5f5;
-  font-size: clamp(18px, 2vw, 28px);
+.project-card-front-overlay h3 {
+  margin-top: 8px;
+  color: #ffffff;
+  font-size: clamp(20px, 2.5vw, 28px);
   font-weight: 700;
   line-height: 1.15;
 }
 
-.project-poster-line {
-  width: 40px;
-  height: 1px;
-  margin-top: 18px;
-  background: #a3e635;
-}
-
-.project-poster-fallback p {
-  margin-top: 14px;
-  color: #8a9484;
-  font-size: 8px;
+.project-card-front-overlay p {
+  margin-top: 8px;
+  color: #c4f477;
+  font-size: 9px;
   letter-spacing: 0.15em;
-}
-
-.project-poster-index {
-  position: absolute;
-  z-index: 2;
-  right: 14px;
-  bottom: 12px;
-  color: rgba(163, 230, 53, 0.65);
-  font-size: 11px;
-  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
 /* =================================
@@ -157,6 +263,7 @@
 .project-card-topline {
   display: flex;
   justify-content: space-between;
+  gap: 8px;
   margin-bottom: 8px;
   color: #a3e635;
   font-size: 8px;
@@ -169,7 +276,7 @@
 
 .project-card-image-wrap {
   width: 100%;
-  height: 75px;
+  height: 100px;
   flex-shrink: 0;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -185,6 +292,11 @@
 
 .project-card-back:hover .project-card-image {
   transform: scale(1.04);
+}
+
+.project-card-content {
+  min-height: 0;
+  overflow: hidden;
 }
 
 .project-card-title {
@@ -211,6 +323,7 @@
   flex-wrap: wrap;
   gap: 4px;
   margin-top: 7px;
+  overflow: hidden;
 }
 
 .project-card-tech span {
@@ -252,8 +365,13 @@
 ================================= */
 
 @media (min-width: 601px) and (max-width: 900px) {
-  .projects-grid {
-    gap: 14px;
+  .projects-showcase {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 22px;
+  }
+
+  .project-tilt-wrapper {
+    max-width: 300px;
   }
 
   .project-flip-card {
@@ -263,10 +381,18 @@
   .project-card-back {
     padding: 11px;
   }
+
+  .project-card-image-wrap {
+    height: 80px;
+  }
+
+  .project-card-title {
+    font-size: 15px;
+  }
 }
 
 /* =================================
-   MOBILE
+   MOBILE — KEEP TWO COLUMNS
 ================================= */
 
 @media (max-width: 600px) {
@@ -274,29 +400,118 @@
     padding: 35px 4%;
   }
 
-  .projects-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+  .projects-heading {
+    margin-bottom: 22px;
+  }
+
+  .projects-heading h2 {
+    font-size: clamp(23px, 5.5vw, 32px);
+  }
+
+  .projects-subtitle {
+    font-size: 8px;
+  }
+
+  /* Names on left, card on right */
+  .projects-showcase {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: clamp(8px, 2.5vw, 16px);
+  }
+
+  .projects-list {
+    width: 100%;
+  }
+
+  .project-selector {
+    gap: 5px;
+    min-height: 0;
+    padding-block: clamp(10px, 2.5vw, 15px);
+  }
+
+  .project-selector-number {
+    font-size: clamp(6px, 1.5vw, 8px);
+  }
+
+  .project-selector-title {
+    font-size: clamp(10px, 2.7vw, 16px);
+    line-height: 1.2;
+  }
+
+  .project-selector-arrow {
+    font-size: clamp(10px, 2.5vw, 14px);
+  }
+
+  .project-tilt-wrapper {
+    max-width: none;
   }
 
   .project-flip-card {
-    height: 300px;
+    width: 100%;
+    height: clamp(190px, 48vw, 260px);
+  }
+
+  .project-card-front-overlay {
+    padding: clamp(8px, 2vw, 14px);
+  }
+
+  .project-card-number {
+    font-size: clamp(6px, 1.5vw, 8px);
+  }
+
+  .project-card-front-overlay h3 {
+    margin-top: 5px;
+    font-size: clamp(12px, 3vw, 18px);
+  }
+
+  .project-card-front-overlay p {
+    margin-top: 5px;
+    font-size: clamp(6px, 1.5vw, 8px);
   }
 
   .project-card-back {
-    padding: 10px;
+    padding: clamp(7px, 1.8vw, 10px);
+  }
+
+  .project-card-topline {
+    gap: 4px;
+    margin-bottom: 5px;
+    font-size: clamp(5px, 1.3vw, 7px);
   }
 
   .project-card-image-wrap {
-    height: 75px;
+    height: clamp(42px, 11vw, 65px);
   }
 
   .project-card-title {
-    font-size: 14px;
+    margin-top: 6px;
+    font-size: clamp(10px, 2.5vw, 14px);
   }
 
   .project-card-description {
-    font-size: 8px;
+    margin-top: 3px;
+    font-size: clamp(6px, 1.6vw, 8px);
+    line-height: 1.3;
+    -webkit-line-clamp: 2;
+  }
+
+  .project-card-tech {
+    gap: 3px;
+    margin-top: 5px;
+  }
+
+  .project-card-tech span {
+    padding: 2px 4px;
+    font-size: clamp(5px, 1.3vw, 6px);
+  }
+
+  .project-card-links {
+    gap: 7px;
+    padding-top: 5px;
+  }
+
+  .project-card-links a {
+    font-size: clamp(6px, 1.5vw, 8px);
   }
 }
 
@@ -305,56 +520,98 @@
 ================================= */
 
 @media (max-width: 380px) {
-  .projects-grid {
-    gap: 8px;
+  .projects-section {
+    padding: 28px 12px;
+  }
+
+  .projects-heading {
+    margin-bottom: 18px;
+  }
+
+  .projects-heading h2 {
+    font-size: 23px;
+  }
+
+  .projects-showcase {
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    gap: 7px;
+  }
+
+  .project-selector {
+    gap: 4px;
+    padding-block: 9px;
+  }
+
+  .project-selector-title {
+    font-size: 10px;
   }
 
   .project-flip-card {
-    height: 280px;
+    height: 190px;
   }
 
   .project-card-back {
-    padding: 8px;
+    padding: 6px;
   }
 
   .project-card-image-wrap {
-    height: 65px;
+    height: 42px;
   }
 
   .project-card-title {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .project-card-description {
-    font-size: 7px;
-  }
-
-  .project-card-tech span {
     font-size: 6px;
   }
 
+  .project-card-tech {
+    gap: 2px;
+    margin-top: 4px;
+  }
+
+  .project-card-tech span {
+    padding: 2px 3px;
+    font-size: 5px;
+  }
+
+  .project-card-links {
+    gap: 5px;
+  }
+
   .project-card-links a {
-    font-size: 8px;
+    font-size: 6px;
+  }
+
+  .project-card-front-overlay {
+    padding: 7px;
+  }
+
+  .project-card-front-overlay h3 {
+    font-size: 12px;
   }
 }
 
 /* =================================
-   REDUCED MOTION
-================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  .project-flip-inner {
-    transition: none;
-  }
-}
-/* =================================
-   DESKTOP — LARGER PROJECT CARDS
+   DESKTOP
 ================================= */
 
 @media (min-width: 901px) {
+  .projects-showcase {
+    gap: 48px;
+  }
+
+  .project-tilt-wrapper {
+    max-width: 420px;
+  }
+
   .project-flip-card {
     height: 330px;
-    width: 280px;
+  }
+
+  .project-card-front-overlay {
+    padding: 22px;
   }
 
   .project-card-back {
@@ -399,5 +656,15 @@
 
   .project-card-links a {
     font-size: 10px;
+  }
+}
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-flip-inner {
+    transition: none;
   }
 }

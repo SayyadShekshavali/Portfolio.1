@@ -12,6 +12,7 @@ import Experience from "./Experience.jsx";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { FiFileText } from "react-icons/fi";
+import Achivements from "./Achivements.jsx";
 
 const greetings = ["NICE TO SEE U!", "HOW R U?", "HV A GREAT DAY!"];
 
@@ -462,6 +463,10 @@ const Mainpage = () => {
       {/* Experience */}
       <div className="lg:-mt-0 ">
         <Experience />
+      </div>
+      <div>
+        {" "}
+        <Achivements />
       </div>
 
       {/* About section */}
