@@ -66,16 +66,18 @@ function ExperienceCard({ experience, isOpen, onToggle, index }) {
       }`}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
+      {/* Timeline dot */}
       <span className="absolute left-[3px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-gray-500 bg-white transition-transform duration-500 sm:h-3 sm:w-3 lg:top-2" />
 
-      <div className="border-b border-gray-200 pb-5 sm:pb-6 lg:pb-6">
+      <div className="border-b border-gray-200 pb-3 sm:pb-4 lg:pb-5">
+        {/* Experience heading */}
         <button
           onClick={onToggle}
           aria-expanded={isOpen}
           className="group flex w-full items-start justify-between gap-2 text-left sm:gap-3"
         >
           <div className="min-w-0 flex-1">
-            <span className="mb-1.5 block text-[8px] font-semibold tracking-[0.15em] text-gray-500 sm:mb-2 sm:text-[9px] sm:tracking-[0.18em] lg:text-[10px] lg:tracking-[0.2em]">
+            <span className="mb-1 block text-[8px] font-semibold tracking-[0.15em] text-gray-500 sm:mb-1.5 sm:text-[9px] sm:tracking-[0.18em] lg:text-[10px] lg:tracking-[0.2em]">
               {experience.type}
             </span>
 
@@ -83,15 +85,16 @@ function ExperienceCard({ experience, isOpen, onToggle, index }) {
               {experience.role}
             </h3>
 
-            <p className="mt-1 text-[10px] text-gray-600 sm:text-xs lg:text-sm">
+            <p className="mt-0.5 text-[10px] text-gray-600 sm:text-xs lg:text-sm">
               {experience.company}
             </p>
           </div>
 
-          <div className="flex shrink-0 items-start gap-1 sm:gap-3 lg:gap-4">
+          {/* Duration and arrow */}
+          <div className="flex shrink-0 items-start gap-1 sm:gap-2 lg:gap-3">
             <span className="pt-1 text-right text-[8px] leading-relaxed text-gray-500 sm:text-[10px] lg:text-xs">
               {experience.period}
-              <span className="mt-1 hidden sm:block">
+              <span className="mt-0.5 hidden sm:block">
                 {experience.location}
               </span>
             </span>
@@ -107,16 +110,17 @@ function ExperienceCard({ experience, isOpen, onToggle, index }) {
           </div>
         </button>
 
+        {/* Expandable content */}
         <div
           className={`grid transition-all duration-500 ease-in-out ${
             isOpen
-              ? "mt-4 grid-rows-[1fr] opacity-100 sm:mt-5"
+              ? "mt-2.5 grid-rows-[1fr] opacity-100 sm:mt-3"
               : "mt-0 grid-rows-[0fr] opacity-0"
           }`}
         >
           <div className="overflow-hidden">
             <div
-              className={`space-y-3 transition-transform duration-500 sm:space-y-4 ${
+              className={`space-y-2 transition-transform duration-500 sm:space-y-3 ${
                 isOpen ? "translate-y-0" : "-translate-y-2"
               }`}
             >
@@ -124,7 +128,8 @@ function ExperienceCard({ experience, isOpen, onToggle, index }) {
                 {experience.description}
               </p>
 
-              <ul className="space-y-2 sm:space-y-3">
+              {/* Highlights */}
+              <ul className="space-y-1.5 sm:space-y-2">
                 {experience.highlights.map((item, index) => (
                   <li
                     key={index}
@@ -136,20 +141,22 @@ function ExperienceCard({ experience, isOpen, onToggle, index }) {
                 ))}
               </ul>
 
-              <div className="flex flex-wrap gap-1.5 pt-1 sm:gap-2">
+              {/* Technologies */}
+              <div className="flex flex-wrap gap-1 pt-0.5 sm:gap-1.5">
                 {experience.technologies.map((tech, index) => (
                   <span
                     key={tech}
                     style={{ transitionDelay: `${index * 50}ms` }}
-                    className="rounded-full border border-gray-200 px-2 py-1 text-[8px] text-gray-600 transition-all duration-300 hover:-translate-y-1 hover:border-gray-400 hover:bg-gray-50 sm:px-3 sm:text-[9px] lg:text-[10px]"
+                    className="rounded-full border border-gray-200 px-2 py-1 text-[8px] text-gray-600 transition-all duration-300 hover:-translate-y-1 hover:border-gray-400 hover:bg-gray-50 sm:px-2.5 sm:text-[9px] lg:text-[10px]"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
 
+              {/* Certificate */}
               {experience.certificateId && (
-                <div className="flex items-center gap-2 pt-1 text-[9px] text-gray-500 sm:pt-2 sm:text-[10px] lg:text-[11px]">
+                <div className="flex items-center gap-2 pt-1 text-[9px] text-gray-500 sm:text-[10px] lg:text-[11px]">
                   <Icon size={12} />
                   Certificate ID: {experience.certificateId}
                 </div>
@@ -168,11 +175,12 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="w-full bg-white px-[4%] py-10 text-left sm:px-[5%] sm:py-14 lg:px-[10%] lg:py-20"
+      className="w-full bg-white px-[3%] py-6 text-left sm:px-[4%] sm:py-8 lg:px-[8%] lg:py-12"
     >
       <div className="mx-auto max-w-5xl">
-        <div className="mb-8 animate-[fadeInUp_0.8s_ease-out_both] sm:mb-10 lg:mb-12">
-          <p className="mb-2 text-[8px] font-semibold uppercase tracking-[0.25em] text-gray-500 sm:mb-3 sm:text-[9px] lg:text-[10px] lg:tracking-[0.3em]">
+        {/* Section heading */}
+        <div className="mb-5 animate-[fadeInUp_0.8s_ease-out_both] sm:mb-6 lg:mb-8">
+          <p className="mb-1.5 text-[8px] font-semibold uppercase tracking-[0.25em] text-gray-500 sm:mb-2 sm:text-[9px] lg:text-[10px] lg:tracking-[0.3em]">
             The Journey So Far
           </p>
 
@@ -180,12 +188,13 @@ export default function Experience() {
             Where I've Grown.
           </h2>
 
-          <p className="mt-2 max-w-lg text-xs leading-5 text-gray-500 sm:mt-3 sm:text-sm sm:leading-6">
+          <p className="mt-1.5 max-w-lg text-xs leading-5 text-gray-500 sm:mt-2 sm:text-sm sm:leading-6">
             A timeline of experiences, contributions and continuous learning.
           </p>
         </div>
 
-        <div className="relative space-y-5 before:absolute before:bottom-4 before:left-[7px] before:top-2 before:w-px before:bg-gray-200 sm:space-y-7 sm:before:left-[8px]">
+        {/* Experience timeline */}
+        <div className="relative space-y-3 before:absolute before:bottom-3 before:left-[7px] before:top-2 before:w-px before:bg-gray-200 sm:space-y-4 sm:before:left-[8px]">
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={experience.id}
@@ -199,16 +208,18 @@ export default function Experience() {
           ))}
         </div>
 
-        <p className="mt-6 pl-6 text-[8px] tracking-wide text-gray-400 sm:mt-8 sm:pl-8 sm:text-[9px] lg:text-[10px]">
+        {/* Footer */}
+        <p className="mt-4 pl-6 text-[8px] tracking-wide text-gray-400 sm:mt-5 sm:pl-8 sm:text-[9px] lg:text-[10px]">
           ALWAYS BUILDING. ALWAYS LEARNING.
         </p>
       </div>
 
+      {/* Animations */}
       <style>{`
         @keyframes fadeInUp {
           from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(15px);
           }
           to {
             opacity: 1;
