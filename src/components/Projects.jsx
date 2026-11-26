@@ -224,9 +224,10 @@ export default function Projects() {
       onMouseEnter={handleSectionEnter}
     >
       <div className="projects-heading">
-        <p className="projects-subtitle">MY SELECTED WORK</p>
+        <p className="projects-subtitle">A FEW THINGS I'VE BUILT</p>
+
         <h2>
-          Projects<span>.</span>
+          Selected <span>Projects.</span>
         </h2>
       </div>
 
