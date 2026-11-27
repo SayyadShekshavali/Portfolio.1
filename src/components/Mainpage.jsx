@@ -464,10 +464,6 @@ const Mainpage = () => {
       <div className="lg:-mt-0 ">
         <Experience />
       </div>
-      <div>
-        {" "}
-        <Achivements />
-      </div>
 
       {/* About section */}
       <div className="w-full min-w-0 mx-auto mt-0 md:mx-3">
@@ -487,6 +483,10 @@ const Mainpage = () => {
       {/* Skills */}
       <div>
         <Skills />
+      </div>
+      <div>
+        {" "}
+        <Achivements />
       </div>
     </section>
   );
