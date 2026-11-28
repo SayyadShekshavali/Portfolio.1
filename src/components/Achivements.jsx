@@ -57,7 +57,7 @@ const Achivements = () => {
   return (
     <section
       id="achievements"
-      className="w-full overflow-hidden bg-white px-3 py-12 text-neutral-900 sm:px-6 sm:py-16 lg:px-12"
+      className="w-full overflow-hidden  px-3 py-12 text-neutral-900 sm:px-6 sm:py-16 lg:px-12"
     >
       <div className="mx-auto max-w-5xl">
         {/* Heading */}
@@ -86,7 +86,7 @@ const Achivements = () => {
                     index * 0.55
                   }s infinite`,
                 }}
-                className="achievement-card group relative h-[205px] overflow-visible rounded-lg border border-white bg-[#f5f4f4] p-2.5 text-neutral-800 shadow-[3px_5px_12px_rgba(60,45,25,0.18)] transition-colors duration-300 hover:bg-[#e4e3e1] min-[400px]:h-[220px] min-[400px]:p-3 sm:h-[230px] sm:rounded-xl sm:p-6"
+                className="achievement-card group relative h-[205px] overflow-visible rounded-lg border border-white bg-[#ffffff] p-2.5 text-neutral-800 shadow-[3px_5px_12px_rgba(60,45,25,0.18)] transition-colors duration-300 hover:bg-[#e4e3e1] min-[400px]:h-[220px] min-[400px]:p-3 sm:h-[230px] sm:rounded-xl sm:p-6 "
               >
                 {/* Pushpin */}
                 <div className="absolute -top-2.5 left-1/2 z-30 -translate-x-1/2 sm:-top-3">
