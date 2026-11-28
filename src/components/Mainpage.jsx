@@ -443,32 +443,32 @@ const Mainpage = () => {
       </div>
 
       {/* About section */}
-      <div className="w-full min-w-0 mx-auto mt-0 md:mx-3">
+      <div id="about" className="w-full min-w-0 mx-auto mt-0 md:mx-3">
         <About />
       </div>
 
       {/* Proof of Work */}
-      <div className="w-full min-w-0 mx-auto">
+      <div id="proof-of-work" className="w-full min-w-0 mx-auto">
         <POW />
       </div>
 
       {/* Projects */}
-      <div className="-mt-10">
+      <div id="projects" className="-mt-10">
         <Projects />
       </div>
 
       {/* Skills */}
-      <div>
+      <div id="skills">
         <Skills />
       </div>
 
       {/* Achievements */}
       <div>
-        <Achivements />
+        <Achivements id="achievements" />
       </div>
 
       {/* Footer */}
-      <div>
+      <div id="contact">
         <Footer />
       </div>
     </section>
