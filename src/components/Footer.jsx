@@ -46,7 +46,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full bg-[#f7f7f5] text-neutral-900">
+    <footer className="w-full bg-[#ffffff] text-neutral-900">
       <div className="mx-auto max-w-7xl px-3 pt-4 min-[400px]:px-4 min-[400px]:pt-10 sm:px-6 sm:pt-4 lg:px-12 lg:pt-10">
         {/* Contact CTA */}
         <div className="mb-4 border-b border-neutral-300 pb-3 min-[400px]:mb-9 min-[400px]:pb-9 sm:mb-10 sm:pb-10 lg:mb-12 lg:pb-10 ">
