@@ -60,14 +60,14 @@ const App = () => {
       ) : (
         <>
           {/* Desktop side navigation */}
-          <nav className="hidden lg:flex fixed left-5 xl:left-0  top-1/2 -translate-y-1/2 z-50 flex-col gap-0">
+          <nav className="hidden lg:flex fixed left-5 xl:left-3  top-1/2 -translate-y-1/2 z-50 flex-col gap-0">
             {navigationItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleNavigation(item.id)}
                 className="group flex items-center -gap-2 text-left"
               >
-                <span className="w-7 h-px bg-neutral-400 group-hover:w-11 group-hover:bg-black transition-all duration-300" />
+                <span className="w-7 h-px bg-neutral-400 group-hover:w-11 group-hover:bg-black transition-all duration-300 pr-1" />
 
                 <span className="text-[11px] tracking-wide text-neutral-500 group-hover:text-black transition-colors duration-300 whitespace-nowrap">
                   {item.label}
