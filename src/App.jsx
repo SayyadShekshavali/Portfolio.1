@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Preloader from "./components/Preloader.jsx";
 import Mainpage from "./components/Mainpage.jsx";
 import DotGridBackground from "./components/DotGridBackground.jsx";
+
+import BranchedMenu from "./components/BranchedMenu.jsx";
 
 const navigationItems = [
   { label: "Experience", id: "experience" },
@@ -16,15 +18,46 @@ const navigationItems = [
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("experience");
 
+  // Navigate to selected section
   const handleNavigation = (id) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
 
+    setActiveSection(id);
     setMenuOpen(false);
   };
+
+  // Detect currently visible section
+  useEffect(() => {
+    if (isLoading) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSections = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visibleSections.length > 0) {
+          setActiveSection(visibleSections[0].target.id);
+        }
+      },
+      {
+        rootMargin: "-20% 0px -55% 0px",
+        threshold: [0, 0.2, 0.4, 0.6, 0.8],
+      },
+    );
+
+    navigationItems.forEach((item) => {
+      const section = document.getElementById(item.id);
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, [isLoading]);
 
   return (
     <div className="relative min-h-screen w-full bg-white">
@@ -59,24 +92,37 @@ const App = () => {
         <Preloader onComplete={() => setIsLoading(false)} />
       ) : (
         <>
-          {/* Desktop side navigation */}
-          <nav className="hidden lg:flex fixed left-5 xl:left-3  top-1/2 -translate-y-1/2 z-50 flex-col -gap-2">
-            {navigationItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleNavigation(item.id)}
-                className="group flex items-center gap-1 text-left"
-              >
-                <span className="w-7 h-px bg-neutral-400 group-hover:w-11 group-hover:bg-black transition-all duration-300 " />
+          {/* Desktop Branched Navigation */}
+          <div className="hidden lg:block fixed left-5 xl:left-3 bottom-0 -translate-y-1/2 z-50">
+            <BranchedMenu
+              items={[
+                {
+                  label: "Navigate",
+                  children: navigationItems.map((item) => ({
+                    value: item.id,
+                    label: item.label,
+                  })),
+                },
+              ]}
+              defaultOpen={[0]}
+              defaultActive={activeSection}
+              onSelect={(value) => handleNavigation(value)}
+              color="black"
+              accentColor="#171717"
+              lineColor="#a3a3a3"
+              width={240}
+              rowHeight={36}
+              indent={40}
+              trunk={14}
+              radius={10}
+              lineWidth={1.5}
+              fontSize={13}
+              drawDuration={400}
+              foldDuration={300}
+            />
+          </div>
 
-                <span className="text-[11px] tracking-wide text-neutral-500 group-hover:text-black transition-colors duration-300 whitespace-nowrap">
-                  {item.label}
-                </span>
-              </button>
-            ))}
-          </nav>
-
-          {/* Mobile and tablet navigation */}
+          {/* Mobile and Tablet Navigation */}
           <div className="lg:hidden fixed top-4 right-4 z-50">
             <button
               type="button"
@@ -98,7 +144,11 @@ const App = () => {
                   <button
                     key={item.id}
                     onClick={() => handleNavigation(item.id)}
-                    className="w-full text-left px-3 py-2.5 rounded-lg text-xs text-neutral-600 hover:text-black hover:bg-neutral-100 transition"
+                    className={`w-full text-left px-3 py-2.5 rounded-lg text-xs transition ${
+                      activeSection === item.id
+                        ? "text-black font-semibold bg-neutral-100"
+                        : "text-neutral-600 hover:text-black hover:bg-neutral-100"
+                    }`}
                   >
                     {item.label}
                   </button>
