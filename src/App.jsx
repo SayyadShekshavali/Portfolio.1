@@ -110,13 +110,13 @@ const App = () => {
               color="black"
               accentColor="#171717"
               lineColor="#a3a3a3"
-              width={200}
-              rowHeight={36}
-              indent={40}
-              trunk={14}
-              radius={10}
-              lineWidth={1.2}
-              fontSize={10}
+              width={190}
+              rowHeight={28}
+              indent={28}
+              trunk={10}
+              radius={7}
+              lineWidth={1}
+              fontSize={11}
               drawDuration={400}
               foldDuration={300}
             />
