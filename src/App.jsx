@@ -60,7 +60,7 @@ const App = () => {
       ) : (
         <>
           {/* Desktop side navigation */}
-          <nav className="hidden lg:flex fixed left-5 xl:left-30  top-1/2 -translate-y-1/2 z-50 flex-col gap-0">
+          <nav className="hidden lg:flex fixed left-5 xl:left-10  top-1/2 -translate-y-1/2 z-50 flex-col gap-0">
             {navigationItems.map((item) => (
               <button
                 key={item.id}
