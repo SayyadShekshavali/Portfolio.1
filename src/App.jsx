@@ -2,17 +2,54 @@ import React, { useEffect, useState } from "react";
 import Preloader from "./components/Preloader.jsx";
 import Mainpage from "./components/Mainpage.jsx";
 import DotGridBackground from "./components/DotGridBackground.jsx";
-
 import BranchedMenu from "./components/BranchedMenu.jsx";
 
+import {
+  Rocket01Icon,
+  TextFontIcon,
+  Layers01Icon,
+  PaintBoardIcon,
+  Settings02Icon,
+  Notification03Icon,
+  CursorPointer01Icon,
+} from "@hugeicons/core-free-icons";
+
 const navigationItems = [
-  { label: "Experience", id: "experience" },
-  { label: "About", id: "about" },
-  { label: "Proof of Work", id: "proof-of-work" },
-  { label: "Projects", id: "projects" },
-  { label: "Skills", id: "skills" },
-  { label: "Achievements", id: "achievements" },
-  { label: "Contact", id: "contact" },
+  {
+    label: "Experience",
+    id: "experience",
+    icon: Rocket01Icon,
+  },
+  {
+    label: "About",
+    id: "about",
+    icon: TextFontIcon,
+  },
+  {
+    label: "Proof of Work",
+    id: "proof-of-work",
+    icon: Layers01Icon,
+  },
+  {
+    label: "Projects",
+    id: "projects",
+    icon: PaintBoardIcon,
+  },
+  {
+    label: "Skills",
+    id: "skills",
+    icon: Settings02Icon,
+  },
+  {
+    label: "Achievements",
+    id: "achievements",
+    icon: Notification03Icon,
+  },
+  {
+    label: "Contact",
+    id: "contact",
+    icon: CursorPointer01Icon,
+  },
 ];
 
 const App = () => {
@@ -53,7 +90,10 @@ const App = () => {
 
     navigationItems.forEach((item) => {
       const section = document.getElementById(item.id);
-      if (section) observer.observe(section);
+
+      if (section) {
+        observer.observe(section);
+      }
     });
 
     return () => observer.disconnect();
@@ -61,6 +101,7 @@ const App = () => {
 
   return (
     <div className="relative min-h-screen w-full bg-white">
+      {/* Dot Grid Background */}
       {!isLoading && (
         <DotGridBackground
           dotColor="#000000"
@@ -88,6 +129,7 @@ const App = () => {
         />
       )}
 
+      {/* Preloader */}
       {isLoading ? (
         <Preloader onComplete={() => setIsLoading(false)} />
       ) : (
@@ -101,13 +143,14 @@ const App = () => {
                   children: navigationItems.map((item) => ({
                     value: item.id,
                     label: item.label,
+                    icon: item.icon,
                   })),
                 },
               ]}
               defaultOpen={[0]}
               defaultActive={activeSection}
               onSelect={(value) => handleNavigation(value)}
-              color="black"
+              color="#171717"
               accentColor="#171717"
               lineColor="#a3a3a3"
               width={190}
@@ -143,6 +186,7 @@ const App = () => {
                 {navigationItems.map((item) => (
                   <button
                     key={item.id}
+                    type="button"
                     onClick={() => handleNavigation(item.id)}
                     className={`w-full text-left px-3 py-2.5 rounded-lg text-xs transition ${
                       activeSection === item.id
@@ -157,6 +201,7 @@ const App = () => {
             )}
           </div>
 
+          {/* Main Page */}
           <main className="relative z-20 w-full">
             <Mainpage />
           </main>
