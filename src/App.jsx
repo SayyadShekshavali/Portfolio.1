@@ -65,7 +65,7 @@ const App = () => {
               <button
                 key={item.id}
                 onClick={() => handleNavigation(item.id)}
-                className="group flex items-center gap-1 text-left"
+                className="group flex items-center -gap-2 text-left"
               >
                 <span className="w-7 h-px bg-neutral-400 group-hover:w-11 group-hover:bg-black transition-all duration-300" />
 
